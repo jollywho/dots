@@ -1,0 +1,17 @@
+vim/backups
+vim/view
+*un~
+vim/.netrwhist
+vim/tmp
+vim/spell
+vim/.vundles.local
+vim/bundle
+vim/sessions
+.netrwhist
+bin/subl
+tags
+mpd/database
+mpd/pid
+mpd/state
+mpd/log
+mpd/sticker.sql
