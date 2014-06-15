@@ -1,0 +1,44 @@
+! -- Fonts -- !
+URxvt.font: xft:Inconsolata:pixelsize=16,xft:Droid Sans Mono:pixelsize=14,xft:DejaVu Sans Mono:pixelsize=14,xft:Droid Sans Fallback:pixelsize=14,xft:FreeSans:pixelsize=14,xft:FreeSans:pixelsize=14
+URxvt.boldFont: xft:Inconsolata:pixelsize=16,xft:Droid Sans Mono:pixelsize=14,xft:DejaVu Sans Mono:pixelsize=14,xft:Droid Sans Fallback:pixelsize=14,xft:FreeSans:pixelsize=14,xft:FreeSans:pixelsize=14
+URxvt.italicFont: xft:Inconsolata:pixelsize=16,xft:Droid Sans Mono:pixelsize=14,xft:DejaVu Sans Mono:pixelsize=14,xft:Droid Sans Fallback:pixelsize=14,xft:FreeSans:pixelsize=14,xft:FreeSans:pixelsize=14
+URxvt.boldItalicFont: xft:Inconsolata:pixelsize=16,xft:Droid Sans Mono:pixelsize=14,xft:DejaVu Sans Mono:pixelsize=14,xft:Droid Sans Fallback:pixelsize=14,xft:FreeSans:pixelsize=14,xft:FreeSans:pixelsize=14
+
+URxvt.internalBorder: 9
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.scrollBar: false
+URxvt.mouseWheelScrollPage: true
+URxvt.saveLines: 32767
+URxvt.urgentOnBell: true
+
+URxvt.url-select.launcher: web_browser
+URxvt.perl-ext-common: font-size,keyboard-select,url-select,clipboard,autocomplete-ALL-the-things
+
+*foreground:	#ffffff
+*background:	#222222
+*color0:	#393939
+*color8:	#474747
+*color1:	#d82f44
+*color9:	#d85b6a
+*color2:	#51dc34
+*color10:	#76dc61
+*color3:	#eac435
+*color11:	#eace65
+*color4:	#0aa2c9
+*color12:	#32aac9
+*color5:	#b61751
+*color13:	#b63c69
+*color6:	#18acb6
+*color14:	#3caeb6
+*color7:	#ebebeb
+*color15:	#cccccc
+
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+! Xft.hintstyle: hintfull
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+Xft.dpi: 96
