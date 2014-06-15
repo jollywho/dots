@@ -11,6 +11,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
+# key repeat rate
+xset r rate 200 25
+
 xset +fp /usr/share/fonts/local
 xset fp rehash
 xrdb ~/.Xresources
