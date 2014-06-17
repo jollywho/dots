@@ -1,0 +1,60 @@
+set titlestring=Mozilla\ Firefox
+" complete search engine suguest
+set complete=location,suggestion,bookmark
+" use home row letters for hints instead of numbers
+set hintkeys='sadfjklewcmpgh'
+" only follow hints when press enter
+set followhints=1
+" highlight all search matches, not just the first
+set hlfind
+" find as you type
+set incfind
+" only consider case if an upper case char is used
+set findcase=smart
+" set wild mode to show completions as you type
+"set wildmode=list:longest,full
+" don't show autocomplete list until <Tab>
+"set autocomplete=
+" turn off the freakin' bell
+set noerrorbells
+set novisualbell
+javascript dactyl.beep = function() { return false; }
+
+map , <Leader>
+" unset maps
+nmap w <Nop>
+nmap W <Nop>
+nmap d <Nop>
+nmap u <Nop>
+nmap a <Nop>
+
+
+" movement
+nmap j 3<Down>
+nmap k 3<Up>
+" vimium like keymap
+map <C-k> <NOP>
+map <C-j> <NOP>
+nmap <C-{> gT
+nmap <C-}> gt
+nmap x :quit<CR>
+nmap X :undo<CR>
+" disable highlight
+map <Leader>/ :set hlf!<CR>
+" yank selected text to clipboard
+nmap Y <yank-selection>
+" commands
+nmap <silent> <Leader>w :smartLayoutClean<CR>
+nmap <silent> <Leader>W :smartLayoutNormal<CR>
+nmap R :reload<CR>
+" bypass pentadactyl commands
+map -m n,v,i,c,t <C-a> <Pass>
+map -m n,v,i,c,t <C-c> <Pass>
+map -m n,v,i,c,t <C-l> <Pass>
+map -m n,v,i,c,t <C-v> <Pass>
+map -m n,v,i,c,t <C-x> <Pass>
+map -m n,v,i,c,t <C-p> <NOP>
+vnoremap ; :
+vnoremap : ;
+nnoremap ; :
+nnoremap : ;
