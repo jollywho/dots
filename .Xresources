@@ -12,8 +12,20 @@ URxvt.mouseWheelScrollPage: true
 URxvt.saveLines: 32767
 URxvt.urgentOnBell: true
 
-URxvt.url-select.launcher: web_browser
-URxvt.perl-ext-common: font-size,keyboard-select,url-select,clipboard,autocomplete-ALL-the-things
+! https://github.com/muennich/urxvt-perls
+URxvt.perl-ext-common: default,clipboard
+URxvt.perl-ext: default,url-select,keyboard-select
+URxvt.keysym.M-u:   perl:url-select:select_next
+URxvt.keysym.M-c:   perl:clipboard:copy
+URxvt.keysym.M-v:   perl:clipboard:paste
+URxvt.url-select.launcher:  /usr/bin/firefox -new-tab
+URxvt.url-select.underline: true
+URxvt.clipboard.copycmd:   xsel -ib
+URxvt.clipboard.pastecmd:  xsel -ob
+
+URxvt.cursorColor:  #ff0066
+*pointerColorBackground: #586e75
+*pointerColorForeground: #93a1a1
 
 *foreground:	#ffffff
 *background:	#222222
