@@ -1,5 +1,6 @@
 # Editors
 #
+set -o vi
 export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
