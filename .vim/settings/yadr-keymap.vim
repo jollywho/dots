@@ -90,14 +90,8 @@ nnoremap <D-]> f]ci]
 "Go to last edit location with ,.
 nnoremap ,. '.
 
-"When typing a string, your quotes auto complete. Move past the quote
-"while still in insert mode by hitting Ctrl-a. Example:
-"
-" type 'foo<c-a>
-"
-" the first quote will autoclose so you'll get 'foo' and hitting <c-a> will
-" put the cursor right after the quote
-imap <C-a> <esc>wa
+imap <C-a> <C-o>0
+imap <C-e> <C-o>$
 
 " ==== NERD tree
 " Cmd-Shift-N for nerd tree
@@ -204,6 +198,10 @@ noremap ,hl :set hlsearch! hlsearch?<CR>
 " with ma.  It’s more useful in any case I can imagine, but it’s located way
 " off in the corner of the keyboard. The best way to handle this is just to
 " swap them: http://items.sjbach.com/319/configuring-vim-right
+nmap j gj
+nmap k gk
+vmap j gj
+vmap k gk
 nnoremap ' `
 nnoremap ` '
 vnoremap ; :
