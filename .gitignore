@@ -5,7 +5,6 @@
 .vim/tmp
 .vim/spell
 .vim/.vundles.local
-.vim/bundle
 .vim/sessions
 .netrwhist
 bin/subl
