@@ -28,17 +28,17 @@ nmap d <Nop>
 nmap u <Nop>
 nmap a <Nop>
 
+map x <Esc>ive
+map X <Esc><Esc>
 
 " movement
-nmap j 3<Down>
-nmap k 3<Up>
 " vimium like keymap
+nmap <C-i> <M-Left>
+nmap <C-o> <M-Right>
 map <C-k> <NOP>
 map <C-j> <NOP>
 nmap <C-{> gT
 nmap <C-}> gt
-nmap x :quit<CR>
-nmap X :undo<CR>
 " disable highlight
 map <Leader>/ :set hlf!<CR>
 " yank selected text to clipboard
