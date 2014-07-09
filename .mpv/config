@@ -1,3 +1,5 @@
 # Write your default config options here!
 
-alang=jpn
+osd-font="DejaVu\ Sans\ Mono\ for\ Powerline"
+
+sub-text-font="DejaVu\ Sans\ Mono\ for\ Powerline"
