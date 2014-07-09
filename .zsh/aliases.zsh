@@ -3,9 +3,15 @@
 # Don't change. The following determines where dots is installed.
 dots=$HOME/dots
 
-alias sy='pbpaste | say -r 300 --interactive=smul'
+dic() {
+  m=$(sdcv -n --color $1 | less | fold -w $(tput cols))
+  if [ $# -gt 1 ]; then
+    m=$(echo $m | grep -m 1 "^ *$2")
+    echo $m | xclip
+  fi
+  echo $m
+}
 
-dic() { sdcv -n --color $1 | less }
 alias stamp='date "+%Y-%m-%d"'
 
 # dots support
@@ -35,13 +41,6 @@ alias lsg='ll | grep'
 # Alias Editing
 alias ae='vim $dots/zsh/aliases.zsh' #alias edit
 alias ar='source $dots/zsh/aliases.zsh'  #alias reload
-
-# vim using
-mvim --version > /dev/null 2>&1
-MACVIM_INSTALLED=$?
-if [ $MACVIM_INSTALLED -eq 0 ]; then
-  alias vim="mvim -v"
-fi
 
 # vimrc editing
 alias ve='vim ~/.vimrc'

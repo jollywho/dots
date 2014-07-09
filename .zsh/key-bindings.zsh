@@ -6,10 +6,10 @@ bindkey -v                                          # Use vi key bindings
 bindkey '^r' history-incremental-search-backward    # [Ctrl-r] - Search backward incrementally for a specified string. The string may begin with ^ to anchor the search to the beginning of the line.
 
 # emacs style
-bindkey '^a' beginning-of-line
-bindkey '^e' end-of-line
-bindkey '^b' backward-word
-bindkey '^f' forward-word
+bindkey '^s' beginning-of-line
+bindkey '^x' end-of-line
+bindkey '^e' vi-forward-blank-word-end
+bindkey '^b' vi-backward-word
 bindkey '^n' down-history
 bindkey '^p' up-history
 bindkey '^u' kill-whole-line
