@@ -29,13 +29,14 @@ path=(
 )
 
 # Colored man pages
-export LESS_TERMCAP_mb=$'\E[00;31m'
-export LESS_TERMCAP_md=$'\E[00;34m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[00;36m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[00;31m'
+export LESS_TERMCAP_mb=$'\E[00;31m' # begin blinking
+export LESS_TERMCAP_md=$'\E[00;34m' # begin bold
+export LESS_TERMCAP_me=$'\E[0m'     # end mode
+export LESS_TERMCAP_se=$'\E[0m'     # end standout-mode
+export LESS_TERMCAP_so=$'\E[41;33;246m'   # begin standout-mode - info box
+export LESS_TERMCAP_ue=$'\E[0m'     # end underline
+export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
+
 
 # Necessary to make colored man pages work
 export GROFF_NO_SGR=1
