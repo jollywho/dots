@@ -4,12 +4,12 @@
 dots=$HOME/dots
 
 dic() {
-  m=$(sdcv -n --color $1 | less | fold -w $(tput cols))
+  m=$(sdcv -n --color $1 | fold -w $(tput cols))
   if [ $# -gt 1 ]; then
     m=$(echo $m | grep -m 1 "^ *$2")
     echo $m | xclip
   fi
-  echo $m
+  echo $m | less
 }
 
 alias stamp='date "+%Y-%m-%d"'
