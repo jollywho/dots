@@ -3,14 +3,31 @@
 # Don't change. The following determines where dots is installed.
 dots=$HOME/dots
 
-dic() {
-  m=$(sdcv -n --color $1 | fold -w $(tput cols))
-  if [ $# -gt 1 ]; then
-    m=$(echo $m | grep -m 1 "^ *$2")
+sdcv_lookup()
+{
+  m=$(sdcv -n --color --data-dir $1 $2)
+  if [[ -n "$3" ]]; then
+    if [[ "$3" -eq 0 ]]; then
+      m=$(echo $m | tail -1)
+    else
+      m=$(echo $m | grep -m 1 "^ *$3")
+    fi
     echo $m | xclip
   fi
   echo $m | less
 }
+
+dic() { sdcv_lookup "/usr/share/stardict/dic" $@ }
+
+jj() { sdcv_lookup "/usr/share/stardict/kn/" $@ }
+
+je() { sdcv_lookup "/usr/share/stardict/je/" $@ }
+
+# TODO:
+# if result is one line
+# delimit commas with numbers
+# opt2: select a number
+ej() { edict "/usr/share/stardict/ej/" $@ }
 
 alias stamp='date "+%Y-%m-%d"'
 
@@ -31,8 +48,8 @@ alias cdb='cd -'
 
 # Show human friendly numbers and colors
 alias df='df -h'
+alias ls='ls++'
 alias ll='ls -alGh'
-alias ls='ls -Gh --color=auto'
 alias du='du -h -d 2'
 
 # show me files matching "ls grep"
