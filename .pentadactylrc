@@ -54,7 +54,7 @@ map -m n,v,i,c,t <C-l> <Pass>
 map -m n,v,i,c,t <C-v> <Pass>
 map -m n,v,i,c,t <C-x> <Pass>
 map -m n,v,i,c,t <C-p> <NOP>
-vmap ; :
-vmap : ;
-nmap ; :
-nmap : ;
+vmap -builtin ; :
+vmap -builtin : ;
+nmap -builtin ; :
+nmap -builtin : ;
