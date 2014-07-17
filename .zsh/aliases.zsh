@@ -50,6 +50,12 @@ ej()
   if [[ "$3" == "je" ]]; then
     m=$(jj $m)
   fi
+  if [[ -n "$4" ]]; then
+    c=$(($4+1))
+    c="$(echo $c),$(echo $c)p"
+    m=$(echo $m | sed '/^$/d' | sed -n $c)
+    echo $m | xclip
+  fi
   echo -e $m | sed "s,^ *[0-9]\+,$(tput setaf 3)&$(tput sgr0)," | less
 }
 
