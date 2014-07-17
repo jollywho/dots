@@ -14,7 +14,7 @@ sdcv_lookup()
     fi
     echo $m | xclip
   fi
-  echo $m | less
+  echo -e $m | sed "s,^ *[0-9]\+[^.],$(tput setaf 3)&$(tput sgr0)," | less
 }
 
 dic() { sdcv_lookup "/usr/share/stardict/dic" $@ }
@@ -30,7 +30,7 @@ je()
   else
     m=$(echo $m | nl)
   fi
-  echo $m | less
+  echo -e $m | sed "s,^ *[0-9]\+[^.],$(tput setaf 3)&$(tput sgr0)," | less
 }
 
 # internal use (CJK)
@@ -50,7 +50,7 @@ ej()
   if [[ "$3" == "je" ]]; then
     m=$(jj $m)
   fi
-  echo $m | less
+  echo -e $m | sed "s,^ *[0-9]\+,$(tput setaf 3)&$(tput sgr0)," | less
 }
 
 alias stamp='date "+%Y-%m-%d"'
