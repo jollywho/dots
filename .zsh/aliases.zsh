@@ -19,15 +19,39 @@ sdcv_lookup()
 
 dic() { sdcv_lookup "/usr/share/stardict/dic" $@ }
 
-jj() { sdcv_lookup "/usr/share/stardict/kn/" $@ }
+# jp (romaji) -> en (romaji)
+je()
+{
+  m=$(sdcv_lookup "/usr/share/stardict/je/" $1)
+  if [[ -n "$2" ]]; then
+    c="$2,$2p"
+    m=$(echo $m | sed '/^$/d' | sed -n $c)
+    echo $m | xclip
+  else
+    m=$(echo $m | nl)
+  fi
+  echo $m | less
+}
 
-je() { sdcv_lookup "/usr/share/stardict/je/" $@ }
+# internal use (CJK)
+jj() { sdcv_lookup "/usr/share/stardict/jj/" $@ | nl | less }
 
-# TODO:
-# if result is one line
-# delimit commas with numbers
-# opt2: select a number
-ej() { edict "/usr/share/stardict/ej/" $@ }
+# en -> jp
+ej()
+{
+  m=$(sdcv_lookup "/usr/share/stardict/ej/" $1)
+  if [[ -n "$2" ]]; then
+    c="$2,$2p"
+    m=$(echo $m | sed '/^$/d' | sed -n $c)
+    echo $m | xclip
+  else
+    m=$(echo $m | nl)
+  fi
+  if [[ "$3" == "je" ]]; then
+    m=$(jj $m)
+  fi
+  echo $m | less
+}
 
 alias stamp='date "+%Y-%m-%d"'
 
