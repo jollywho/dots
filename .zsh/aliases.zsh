@@ -3,6 +3,38 @@
 # Don't change. The following determines where dots is installed.
 dots=$HOME/dots
 
+date2stamp () {
+    date --utc --date "$1" +%s
+}
+
+stamp2date (){
+    date --utc --date "1970-01-01 $1 sec" "+%Y-%m-%d %T"
+}
+
+dateDiff (){
+    case $1 in
+        -s)   sec=1;      shift;;
+        -m)   sec=60;     shift;;
+        -h)   sec=3600;   shift;;
+        -d)   sec=86400;  shift;;
+        *)    sec=86400;;
+    esac
+    dte1=$(date2stamp $1)
+    dte2=$(date2stamp $2)
+    diffSec=$((dte2-dte1))
+    if ((diffSec < 0)); then abs=-1; else abs=1; fi
+    echo $((diffSec/sec*abs))
+}
+
+webmc () {
+  tdiff=$(dateDiff -s $2 $3)
+  ffmpeg -i "$1" out.ssa
+  ffmpeg -i "$1" -vf subtitles=out.ssa -t $tdiff -ss $2 -codec:v libx264 -crf 23 -preset medium -strict -2 "$1".avi
+  ffmpeg -i "$1".avi -c:v libvpx -b:v 2M -c:a libvorbis "$1".webm
+  rm out.ssa
+  rm "$1".avi
+}
+
 sdcv_lookup()
 {
   m=$(sdcv -n --color --data-dir $1 $2)
