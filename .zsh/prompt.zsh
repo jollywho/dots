@@ -6,7 +6,6 @@ zstyle ':vcs_info:*'              actionformats '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{
 zstyle ':vcs_info:*'              formats       '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat  '%b%F{1}:%F{3}%r'
 
-vimode=I
 # set vimode to current editing mode
 function zle-line-init zle-keymap-select {
   vimode="${${KEYMAP/vicmd/C}/(main|viins)/I}"
