@@ -2,7 +2,7 @@ set titlestring=Mozilla\ Firefox
 " complete search engine suguest
 set complete=location,suggestion,bookmark
 " use home row letters for hints instead of numbers
-set hintkeys='sadfjklewcmpgh'
+set hintkeys='sadfuilewcmpgh'
 " only follow hints when press enter
 set followhints=1
 " highlight all search matches, not just the first
@@ -30,6 +30,13 @@ nmap a <Nop>
 
 map x <Esc>ive
 map X <Esc><Esc>
+
+map F g;b
+map f g;o
+map -m hints j     -ex normal! j
+map -m hints k     -ex normal! k
+map -m hints <C-d>     -ex normal! <C-d>
+map -m hints <C-u>     -ex normal! <C-u>
 
 " movement
 " vimium like keymap
