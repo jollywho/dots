@@ -3,6 +3,8 @@
 # Don't change. The following determines where dots is installed.
 dots=$HOME/dots
 
+manswitch () { man $1 | less -p "^ +$2"; }
+
 date2stamp () {
     date --utc --date "$1" +%s
 }
@@ -92,6 +94,7 @@ ej()
 }
 
 alias stamp='date "+%Y-%m-%d"'
+alias trans='transmission-remote-cli'
 
 # dots support
 alias yav='dots vim-add-plugin'
