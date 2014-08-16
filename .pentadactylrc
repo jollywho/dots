@@ -2,7 +2,7 @@ set titlestring=Mozilla\ Firefox
 " complete search engine suguest
 set complete=location,suggestion,bookmark
 " use home row letters for hints instead of numbers
-set hintkeys='sadfuilewcmpgh'
+set hintkeys='saduilewcmpgh'
 " only follow hints when press enter
 set followhints=1
 " highlight all search matches, not just the first
@@ -24,7 +24,6 @@ map , <Leader>
 " unset maps
 nmap w <Nop>
 nmap W <Nop>
-nmap d <Nop>
 nmap u <Nop>
 nmap a <Nop>
 
@@ -32,7 +31,6 @@ map x <Esc>ive
 map X <Esc><Esc>
 
 map F g;b
-map f g;o
 map -m hints j     -ex normal! j
 map -m hints k     -ex normal! k
 map -m hints <C-d>     -ex normal! <C-d>
