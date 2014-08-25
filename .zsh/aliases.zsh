@@ -31,8 +31,8 @@ dateDiff (){
 webmc () {
   tdiff=$(dateDiff -s $2 $3)
   ffmpeg -i "$1" out.ssa
-  ffmpeg -i "$1" -vf subtitles=out.ssa -t $tdiff -ss $2 -codec:v libx264 -crf 23 -preset medium -strict -2 "$1".avi
-  ffmpeg -i "$1".avi -c:v libvpx -b:v 2M -c:a libvorbis "$1".webm
+  ffmpeg -i "$1" -vf subtitles=out.ssa -t $tdiff -ss $2 -cpu-used 0 -threads 4 -codec:v libx264 -crf 23 -preset medium -strict -2 "$1".avi
+  ffmpeg -i "$1".avi -cpu-used 0 -threads 4 -c:v libvpx -b:v 3M -c:a libvorbis "$1".webm
   rm out.ssa
   rm "$1".avi
 }
@@ -51,7 +51,7 @@ sdcv_lookup()
   echo -e $m | sed "s,^ *[0-9]\+[^.],$(tput setaf 3)&$(tput sgr0)," | less
 }
 
-dic() { sdcv_lookup "/usr/share/stardict/dic" $@ }
+dic() { sdcv_lookup "/usr/share/stardict/dic" $@ | fmt }
 
 # jp (romaji) -> en (romaji)
 je()
@@ -91,6 +91,11 @@ ej()
     echo $m | xclip
   fi
   echo -e $m | sed "s,^ *[0-9]\+,$(tput setaf 3)&$(tput sgr0)," | less
+}
+
+whichd()
+{
+  cd $(which $1 | xargs dirname)
 }
 
 alias stamp='date "+%Y-%m-%d"'
