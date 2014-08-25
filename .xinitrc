@@ -8,7 +8,8 @@ xrdb .Xresources
 
 feh --bg-scale ~/.config/bg.jpg
 xset r rate 250 60
-xrandr --output DVI-0 --auto --right-of HDMI-0
+xrandr --output DisplayPort1 --off --output DVI-0 --mode 1280x1024 --pos 1920x0 --rotate left --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal
+unclutter -idle 1 &
 xset s off
 xset -dpms
 systemctl start smbd
