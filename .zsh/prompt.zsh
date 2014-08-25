@@ -19,20 +19,35 @@ function vcs_info_wrapper {
   [[ -n "$vcs_info_msg_0_" ]] && echo " %{$fg[grey]%}${vcs_info_msg_0_/ /}%{$reset_color%}"
 }
 
-function set_prompt {
-  local pmt="red"
-  (( EUID == 0 ))          && pmt="blue"
-  [[ -n $SSH_CONNECTION ]] && pmt="magenta"
-  PROMPT="┌┤%{$fg[green]%}%n%{$reset_color%}>%{$fg[${pmt}]%}%m%{$reset_color%} %{$fg[blue]%}[%0~]%{$reset_color%}
-└→ "
-
-  (( EUID == 0 )) && PROMPT+='%{$fg[red]%}##%{$reset_color%} ' \
-                  || PROMPT+='%{$fg[blue]%}//%{$reset_color%} '
-
-  RPROMPT='$(vcs_info_wrapper)'
-  RPROMPT+='%{$fg[yellow]%}%(?.. %?)%{$reset_color%}'
-  RPROMPT+='%{$fg[green]%} ${vimode}%{$reset_color%}'
+## Functions
+function ssh_state {
+    if [ -n "$SSh_CONNECTION" ]; then
+        echo "%{$fg[red]%}<%{$fg[white]%}SSH%{$fg[red]%}> "
+    fi
 }
 
-set_prompt
-unset set_prompt
+function collapse_pwd {
+    if [[ $(pwd) == $HOME ]]; then
+        echo $(pwd)
+    else    
+        echo $(pwd | sed -e "s,^$HOME,~,")
+    fi
+}
+
+function error_code {
+    if [[ $? == 0 ]]; then
+        echo ""
+    else
+        echo "%{$fg[white]%}<%{$fg[red]%}%?%{$fg[white]%}>%{$reset_color%}"
+fi
+}
+
+last_command='%(?.>>.<<)'
+
+
+## Prompts
+PROMPT='
+  %{$fg[red]%}<%{$fg[white]%}$(collapse_pwd)%{$fg[red]%}> $(ssh_state)
+%{$fg[white]%}$last_command%{$reset_color%} '
+
+RPROMPT='$(error_code)%{$reset_color%}'
