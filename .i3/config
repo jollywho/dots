@@ -27,8 +27,8 @@ client.urgent           #a5a5a5 #a5a5a5 #2e3436
 client.background       #161616
 
 set $mod Mod4
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+
+focus_follows_mouse no
 
 #...........
 # Keybinds
