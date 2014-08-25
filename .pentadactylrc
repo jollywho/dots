@@ -18,6 +18,7 @@ set findcase=smart
 " turn off the freakin' bell
 set noerrorbells
 set novisualbell
+set maxitems=2
 javascript dactyl.beep = function() { return false; }
 
 map , <Leader>
