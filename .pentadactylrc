@@ -21,6 +21,8 @@ set novisualbell
 set maxitems=2
 javascript dactyl.beep = function() { return false; }
 
+nmap ee ;!/usr/bin/eipsh<CR><CR>
+
 map , <Leader>
 " unset maps
 nmap w <Nop>
@@ -53,13 +55,14 @@ nmap Y <yank-selection>
 nmap <silent> <Leader>w :smartLayoutClean<CR>
 nmap <silent> <Leader>W :smartLayoutNormal<CR>
 nmap R :reload<CR>
+
 " bypass pentadactyl commands
 map -m n,v,i,c,t <C-a> <Pass>
 map -m n,v,i,c,t <C-c> <Pass>
 map -m n,v,i,c,t <C-l> <Pass>
 map -m n,v,i,c,t <C-v> <Pass>
 map -m n,v,i,c,t <C-x> <Pass>
-map -m n,v,i,c,t <C-p> <NOP>
+map -m n,v,i,c,t <C-P> <NOP>
 vmap -builtin ; :
 vmap -builtin : ;
 nmap -builtin ; :
