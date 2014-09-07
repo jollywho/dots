@@ -8,7 +8,6 @@ URxvt.internalBorder: 9
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 URxvt.scrollBar: false
-URxvt.mouseWheelScrollPage: true
 URxvt.saveLines: 32767
 URxvt.urgentOnBell: true
 
@@ -16,12 +15,14 @@ URxvt.urgentOnBell: true
 URxvt.perl-ext-common: default,clipboard
 URxvt.perl-ext: default,url-select,keyboard-select
 URxvt.keysym.M-u:   perl:url-select:select_next
+URxvt.keysym.M-f:   perl:keyboard-select:activate
+URxvt.keysym.M-/:   perl:keyboard-select:search
 URxvt.keysym.M-c:   perl:clipboard:copy
 URxvt.keysym.M-v:   perl:clipboard:paste
 URxvt.url-select.launcher:  /usr/bin/firefox -new-tab
 URxvt.url-select.underline: true
-URxvt.clipboard.copycmd:   xsel -ib
-URxvt.clipboard.pastecmd:  xsel -ob
+URxvt.clipboard.copycmd:   xsel -i
+URxvt.clipboard.pastecmd:  xsel -o
 
 URxvt.cursorColor:  #ff0066
 *pointerColorBackground: #586e75
