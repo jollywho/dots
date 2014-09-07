@@ -100,6 +100,7 @@ whichd()
 
 alias stamp='date "+%Y-%m-%d"'
 alias trans='transmission-remote-cli'
+alias transd='transmission-daemon'
 
 # dots support
 alias yav='dots vim-add-plugin'
