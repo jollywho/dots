@@ -1,6 +1,8 @@
 markA = ""
 markB = ""
 active = false
+istimer = false
+timer = Nil
 
 function set_active()
   active = not active
@@ -32,7 +34,28 @@ function key_A()
   print(markB)
 end
 
+function key_R()
+  istimer = not istimer
+  timeit()
+end
+
+function timeit()
+  if istimer then
+    if markA ~= "" and markB ~= "" then
+      d1 = (markA > markB) and markA or markB
+      d2 = (markA < markB) and markA or markB
+      d = d1 - d2
+      timer = mp.add_timeout(d, timeit)
+      if markA > markB then
+        key_A()
+      else
+        key_a()
+      end
+    end
+  end
+end
+
 mp.add_key_binding("m", set_active)
 mp.add_key_binding("a", key_a)
 mp.add_key_binding("A", key_A)
---mp.add_periodic_timer(3, get_timey)
+mp.add_key_binding("R", key_R)
