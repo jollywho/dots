@@ -96,18 +96,20 @@ bindsym $mod+space focus mode_toggle
 # focus the child container
 #bindsym $mod+d focus child
 
-set $ws1 "一:"
-set $ws2 "二:"
-set $ws3 "三:"
-set $ws4 "四:"
-set $ws5 "五:"
-set $ws6 "六:"
-set $ws7 "七:"
-set $ws8 "八:"
-set $ws9 "九:"
-set $ws0 "{〇}"
+set $wsE "0"
+set $ws1 "(一)"
+set $ws2 "(二)"
+set $ws3 "(三)"
+set $ws4 "(四)"
+set $ws5 "(五)"
+set $ws6 "(六)"
+set $ws7 "(七)"
+set $ws8 "(八)"
+set $ws9 "(九)"
+set $ws0 "(〇)"
 
 # switch to workspace
+bindsym $mod+e workspace $wsE
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -120,6 +122,7 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+BackSpace workspace $ws0
 
 # move focused container to workspace
+bindsym $mod+Shift+e move container to workspace $wsE
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
