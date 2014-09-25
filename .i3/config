@@ -80,9 +80,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -91,20 +91,21 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
 
-set $ws1 "1:"
-set $ws2 "2:"
-set $ws3 "3:"
-set $ws4 "4:"
-set $ws5 "5:"
-set $ws6 "6:"
-set $ws7 "7:"
-set $ws8 "8:"
-set $ws9 "9:"
+set $ws1 "一:"
+set $ws2 "二:"
+set $ws3 "三:"
+set $ws4 "四:"
+set $ws5 "五:"
+set $ws6 "六:"
+set $ws7 "七:"
+set $ws8 "八:"
+set $ws9 "九:"
+set $ws0 "{〇}"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -116,6 +117,7 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
+bindsym $mod+BackSpace workspace $ws0
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -159,23 +161,24 @@ bindsym $mod+x mode "resize"
 #Status bar
 
 bar {
-  mode dock
+    output HDMI-0
+    mode dock
     position top
-    font -*-profont-*-*-*-*-11-*-*-*-*-*-*-*
-    workspace_buttons yes
+    status_command ~/.i3/conky
+    font pango:Terminus 11px
     tray_output none
     colors {
-      background #161616
-        statusline #605c5a
-        focused_workspace #161616 #161616 #909737
-        active_workspace #161616 #161616 #a5a5a5
-        inactive_workspace #161616 #161616 #a5a5a5
-        urgent_workspace #161616 #161616 #802828
+    background #161616
+    statusline #605c5a
+    focused_workspace  #161616 #161616 #909737
+    active_workspace   #161616 #161616 #a5a5a5
+    inactive_workspace #161616 #161616 #a5a5a5
+    urgent_workspace   #161616 #161616 #802828
 
-        # Type             border  background font
-        focused_workspace  #008fff #007fff #ffffff
-        active_workspace   #333333 #5f676a #ffffff
-        inactive_workspace #333333 #222222 #888888
-        urgent_workspace   #aa0000 #990000 #ffffff
+    # Type             border  background font
+    focused_workspace  #008fff #007fff #ffffff
+    active_workspace   #333333 #5f676a #ffffff
+    inactive_workspace #333333 #222222 #888888
+    urgent_workspace   #aa0000 #990000 #ffffff
     }
 }
