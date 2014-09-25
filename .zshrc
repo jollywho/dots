@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 fpath=($fpath /usr/share/doc/task/scripts/zsh)
+PATH="`ruby -rubygems -e 'puts Gem.user_dir'`/bin:$PATH"
 
 autoload -U colors && colors
 autoload -U compinit && compinit
@@ -51,6 +52,11 @@ setopt bg_nice
 
 # zle
 unsetopt beep
+
+autoload -U select-word-style
+select-word-style bash
+
+bindkey '^[[Z' reverse-menu-complete
 
 [[ $TASK == show ]] && task long
 
