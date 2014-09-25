@@ -1,9 +1,11 @@
-source ac1
-source ac2
+source ~/.mutt/ac1
+source ~/.mutt/ac2
+source ~/.mutt/ac3
 
 set imap_check_subscribed
 set sort     = threads
-set sort_aux = last-date-received
+set sort_aux = reverse-last-date-received
+set sort_re
 
 set header_cache     = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
@@ -44,14 +46,18 @@ bind index R  group-reply
 bind index -  collapse-thread
 bind index _  collapse-all
 
-bind editor <space> noop
-macro index,pager gi "<change-folder>=INBOX<enter>" "Go to inbox"
-macro index,pager ga "<change-folder>=Arch<enter>" "Go to archlinux mail"
-macro index,pager gA "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
-macro index,pager gs "<change-folder>=[Gmail]/Starred<enter>" "Go to starred messages"
-macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
+set sidebar_width=20
+set sidebar_visible=yes
 
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+
+bind editor <space> noop
 macro index M "T~N<enter>;WNT~O<enter>;WO\CT~A<enter>" "Mark all messages read"
+macro index,pager g1 '<sync-mailbox><enter-command>source ~/.mutt/ac1 <enter><change-folder>!<enter>'
+macro index,pager g2 '<sync-mailbox><enter-command>source ~/.mutt/ac2 <enter><change-folder>!<enter>'
+macro index,pager g3 '<sync-mailbox><enter-command>source ~/.mutt/ac3 <enter><change-folder>!<enter>'
 
 set allow_ansi
 auto_view text/x-diff
