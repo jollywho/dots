@@ -98,6 +98,7 @@ whichd()
   cd $(which $1 | xargs dirname)
 }
 
+alias calc='orpie'
 alias stamp='date "+%Y-%m-%d"'
 alias trans='transmission-remote-cli'
 alias transd='transmission-daemon'

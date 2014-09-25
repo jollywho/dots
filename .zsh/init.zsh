@@ -35,6 +35,7 @@ unsetopt FLOW_CONTROL      # Disable start/stop characters in shell editor.
 #
 
 # Use caching to make completion for cammands such as dpkg and apt usable.
+zstyle ':zoppo:plugin:editor' mode 'emacs'
 zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path "${ZDOTDIR:-$HOME}/.zcompcache"
 
@@ -76,20 +77,18 @@ zstyle ':completion:*:functions' ignored-patterns '(_*|pre(cmd|exec))'
 zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
 
 # Directories
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:' list-dirs-first true
+zstyle ':completion:*:default' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
 zstyle ':completion:*:*:cd:*' tag-order local-directories directory-stack path-directories
 zstyle ':completion:*:*:cd:*:directory-stack' menu yes select
 zstyle ':completion:*:-tilde-:*' group-order 'named-directories' 'path-directories' 'users' 'expand'
-zstyle ':completion:*' squeeze-slashes true
+zstyle ':completion:*' squeeze-slashes false
 
 # History
 zstyle ':completion:*:history-words' stop yes
 zstyle ':completion:*:history-words' remove-all-dups yes
 zstyle ':completion:*:history-words' list false
 zstyle ':completion:*:history-words' menu yes
-
-# Environmental Variables
-zstyle ':completion::*:(-command-|export):*' fake-parameters ${${${_comps[(I)-value-*]#*,}%%,*}:#-*-}
 
 # Populate hostname completion.
 zstyle -e ':completion:*:hosts' hosts 'reply=(
