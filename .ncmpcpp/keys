@@ -84,15 +84,16 @@ key_music_visualizer = '9' 57
 #
 key_pause = 'p'
 #
-#key_next = '>'
+key_next = '{'
 #
-#key_prev = '<'
+key_prev = '}'
 #
 #key_replay = 263 127
 #
-#key_seek_forward = 'f'
 #
-#key_seek_backward = 'b'
+key_seek_forward = '>'
+#
+key_seek_backward = '<'
 #
 #key_toggle_repeat = 'r'
 #
@@ -116,9 +117,9 @@ key_pause = 'p'
 #
 #key_apply_filter = 6
 #
-#key_find_forward = '/'
+key_find_forward = '/'
 #
-#key_find_backward = '?'
+key_find_backward = '?'
 #
 key_next_found_position = 'n'
 #
