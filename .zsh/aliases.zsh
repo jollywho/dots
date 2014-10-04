@@ -53,46 +53,6 @@ sdcv_lookup()
 
 dic() { sdcv_lookup "/usr/share/stardict/dic" $@ | fmt }
 
-# jp (romaji) -> en (romaji)
-je()
-{
-  m=$(sdcv_lookup "/usr/share/stardict/je/" $1)
-  if [[ -n "$2" ]]; then
-    c="$2,$2p"
-    m=$(echo $m | sed '/^$/d' | sed -n $c)
-    echo $m | xclip
-  else
-    m=$(echo $m | nl)
-  fi
-  echo -e $m | sed "s,^ *[0-9]\+[^.],$(tput setaf 3)&$(tput sgr0)," | less
-}
-
-# internal use (CJK)
-jj() { sdcv_lookup "/usr/share/stardict/jj/" $@ | nl | less }
-
-# en -> jp
-ej()
-{
-  m=$(sdcv_lookup "/usr/share/stardict/ej/" $1)
-  if [[ -n "$2" ]]; then
-    c="$2,$2p"
-    m=$(echo $m | sed '/^$/d' | sed -n $c)
-    echo $m | xclip
-  else
-    m=$(echo $m | nl)
-  fi
-  if [[ "$3" == "je" ]]; then
-    m=$(jj $m)
-  fi
-  if [[ -n "$4" ]]; then
-    c=$(($4+1))
-    c="$(echo $c),$(echo $c)p"
-    m=$(echo $m | sed '/^$/d' | sed -n $c)
-    echo $m | xclip
-  fi
-  echo -e $m | sed "s,^ *[0-9]\+,$(tput setaf 3)&$(tput sgr0)," | less
-}
-
 whichd()
 {
   cd $(which $1 | xargs dirname)
