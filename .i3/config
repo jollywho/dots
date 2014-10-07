@@ -9,8 +9,8 @@ font xft:termsyn:pixelsize=11
 #..........
 
 new_window none
-bindsym $mod+t border normal
-bindsym $mod+y border 1pixel
+#bindsym $mod+t border normal
+#bindsym $mod+y border 1pixel
 bindsym $mod+u border none
 
 bindsym $mod+Shift+minus move scratchpad
