@@ -26,6 +26,7 @@ nmap ee ;!/usr/bin/eipsh<CR><CR>
 command! -nargs=* -description='yt search' yt tabopen http://youtube.com/results?search_query=<args>
 command! -nargs=* -description='tpb search' tpb tabopen https://thepiratebay.se/search/<args>/
 command! -nargs=* -description='nya search' nya tabopen http://www.nyaa.se/?page=search&term=<args>&sort=2
+command! -nargs=* -description='jo search' jo tabopen http://jisho.org/words?jap=<args>
 
 highlight Bell background-color: inherit; border: 0 none;
 highlight -link=FontFixed CmdLine color: #C2BFB8; font-family: Liberation Mono;
