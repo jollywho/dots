@@ -9,7 +9,7 @@ cd $HOME
 
 #Essential
 read -p "Essential Y/n? " -n 1 -r
-if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -s dots/.zsh .
   ln -s dots/.zshrc .
   ln -s dots/.zshenv .
@@ -26,7 +26,7 @@ fi
 
 #Client
 read -p "Client Y/n? " -n 1 -r
-if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -s dots/.weechat .
   ln -s dots/.mutt .
   ln -s dots/.config/ranger .config/ranger
@@ -37,7 +37,7 @@ fi
 
 #X11
 read -p "X11 Y/n? " -n 1 -r
-if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -s dots/.xinitrc .
   ln -s dots/.xResources .
   ln -s dots/.i3 .
@@ -48,7 +48,7 @@ fi
 
 #Media
 read -p "Media Y/n? " -n 1 -r
-if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -s dots/.mpd
   ln -s dots/.ncmpcpp
   ln -s dots/.mpv
