@@ -1,0 +1,58 @@
+#Setup process
+
+#User:
+#cd $HOME
+#pacman -S git
+#git clone https://github.com/jollywho/dots
+
+cd $HOME
+
+#Essential
+read -p "Essential Y/n? " -n 1 -r
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+  ln -s dots/.zsh .
+  ln -s dots/.zshrc .
+  ln -s dots/.zshenv .
+  ln -s dots/.vim .
+  ln -s dots/.vimrc .
+  ln -s dots/.dircolors .
+  ln -s dots/.tmux.conf .
+  ln -s dots/.git .
+  ln -s dots/.gitignore .
+  pacman -S zsh
+  pacman -S vim
+  pacman -S tmux
+fi
+
+#Client
+read -p "Client Y/n? " -n 1 -r
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+  ln -s dots/.weechat .
+  ln -s dots/.mutt .
+  ln -s dots/.config/ranger .config/ranger
+  pacman -S weechat
+  pacman -S ranger
+  pacman -S mutt
+fi
+
+#X11
+read -p "X11 Y/n? " -n 1 -r
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+  ln -s dots/.xinitrc .
+  ln -s dots/.xResources .
+  ln -s dots/.i3 .
+  ln -s dots/.config/dwb .config/dwb
+  pacman -S i3-wm
+  pacman -S dwb
+fi
+
+#Media
+read -p "Media Y/n? " -n 1 -r
+if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+  ln -s dots/.mpd
+  ln -s dots/.ncmpcpp
+  ln -s dots/.mpv
+  pacman -S mpd
+  pacman -S ncmpcpp
+  pacman -S mpv
+fi
