@@ -13,6 +13,18 @@ stamp2date (){
     date --utc --date "1970-01-01 $1 sec" "+%Y-%m-%d %T"
 }
 
+tiny()
+{
+  if [ -n "$1" ]; then
+    url="$1"
+  else
+    echo "Error: You must pass a URL"
+    exit
+  fi
+  res=$(curl -s "http://is.gd/api.php?longurl=${url}")
+  echo $res
+}
+
 dateDiff (){
     case $1 in
         -s)   sec=1;      shift;;
