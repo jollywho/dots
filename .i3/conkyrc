@@ -4,13 +4,15 @@ background no
 max_text_width 0
 update_interval 1
 total_run_times 0
-double_buffer yes
+double_buffer no
+
+#{"full_text" : "${mpd_file}",                                 "color" : "\#f9cff0"},
 
 TEXT
-[{"full_text" : "${mpd_file}", "color" : "\#89cff0"},
- {"full_text" : "${mpd_elapsed}/${mpd_length}",                "color" : "\#ff8888"},
+[
  {"full_text" : "${mpd_vol}%",                                 "color" : "\#eeeeee"},
  {"full_text" : "IP: ${addr eth0}",                            "color" : "\#99ff99"},
  {"full_text" : "RAM: ${mem}",                                 "color" : "\#aaaaff"},
  {"full_text" : "Load: ${loadavg 1}",                          "color" : "\#fff79a"},
- {"full_text" : "${tztime US/Eastern %a %b %d, %Y %X}",        "color" : "\#eeeeee"}],
+ {"full_text" : "${tztime US/Eastern %d/%m#%H:%M}",        "color" : "\#eeeeee"}
+],

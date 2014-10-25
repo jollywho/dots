@@ -6,7 +6,7 @@
 
 xrdb .Xresources
 
-xset r rate 250 60
+xset r rate 230 80
 xrandr --output DisplayPort1 --off --output DVI-0 --mode 1280x1024 --pos 1920x0 --rotate left --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal
 unclutter -idle 1 &
 xset s off
@@ -15,7 +15,7 @@ xset -dpms
 feh --bg-scale ~/.config/bg.jpg  ~/.config/ngnl.jpg
 
 systemctl start smbd
-
+setxkbmap -option caps:ctrl_modifier
 export GTK_IM_MODULE='uim'
 export QT_IM_MODULE='uim'
 uim-xim &
