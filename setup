@@ -8,7 +8,8 @@
 cd $HOME
 
 #Essential
-read -p "Essential Y/n? " -n 1 -r
+echo
+read -p "Essential Y/n? "
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -s dots/.zsh .
   ln -s dots/.zshrc .
@@ -19,13 +20,17 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -s dots/.tmux.conf .
   ln -s dots/.git .
   ln -s dots/.gitignore .
+  git clone https://github.com/gmarik/Vundle.vim dots/.vim/bundle/vundle
   pacman -S zsh
   pacman -S vim
   pacman -S tmux
+  vim --noplugin -u dots/.vim/vundles.vim -N \"+set hidden\" \"+syntax on\" \
+    + BundleClean +BundleInstall +qall
 fi
 
 #Client
-read -p "Client Y/n? " -n 1 -r
+echo
+read -p "Client Y/n? "
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -s dots/.weechat .
   ln -s dots/.mutt .
@@ -36,7 +41,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 #X11
-read -p "X11 Y/n? " -n 1 -r
+echo
+read -p "X11 Y/n? "
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -s dots/.xinitrc .
   ln -s dots/.xResources .
@@ -47,7 +53,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 #Media
-read -p "Media Y/n? " -n 1 -r
+echo
+read -p "Media Y/n? "
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -s dots/.mpd
   ln -s dots/.ncmpcpp
