@@ -21,6 +21,7 @@ autoload -Uz compinit && compinit -i
 # Options
 #
 
+setopt NO_COMPLETE_ALIASES # Allow aliases to be internally substituted.
 setopt COMPLETE_IN_WORD    # Complete from both ends of a word.
 setopt ALWAYS_TO_END       # Move cursor to the end of a completed word.
 setopt PATH_DIRS           # Perform path search even on command names with slashes.
@@ -35,7 +36,7 @@ unsetopt FLOW_CONTROL      # Disable start/stop characters in shell editor.
 #
 
 # Use caching to make completion for cammands such as dpkg and apt usable.
-zstyle ':zoppo:plugin:editor' mode 'emacs'
+zstyle ':zoppo:plugin:editor' mode 'vim'
 zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path "${ZDOTDIR:-$HOME}/.zcompcache"
 
