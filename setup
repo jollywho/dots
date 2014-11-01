@@ -26,6 +26,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   pacman -S tmux
   vim --noplugin -u dots/.vim/vundles.vim -N \"+set hidden\" \"+syntax on\" \
     + BundleClean +BundleInstall +qall
+  chsh -s /usr/bin/zsh
 fi
 
 #Client
@@ -63,3 +64,13 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   pacman -S ncmpcpp
   pacman -S mpv
 fi
+
+echo " *  *   *****    ***   *    *  *****   *  *"
+echo " *  *    *   *  *   *  *    *  *       *  *"
+echo "******   *   *  *   *  **   *  *      ******"
+echo " *  *    *   *  *   *  * *  *  *       *  *"
+echo " *  *    *   *  *   *  *  * *  ****    *  *"
+echo " *  *    *   *  *   *  *   **  *       *  *"
+echo "******   *   *  *   *  *    *  *      ******"
+echo " *  *    *   *  *   *  *    *  *       *  *"
+echo " *  *   *****    ***   *    *  *****   *  *"
