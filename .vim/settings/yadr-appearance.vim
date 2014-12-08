@@ -1,7 +1,7 @@
 " Make it beautiful - colors and fonts
 
-colorscheme desert
-set background=dark
+colorscheme jellybeans
+set background=light
 
 if has("gui_running")
   "tell the term has 256 colors

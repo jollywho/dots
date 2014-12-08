@@ -184,8 +184,8 @@ imap <silent> <C-J> <%  %><Esc>2hi
 nnoremap <silent> ,cf :let @* = expand("%:~")<CR>
 nnoremap <silent> ,cn :let @* = expand("%:t")<CR>
 
-"Clear current search highlight by double tapping //
-nmap <silent> // :noh<CR>
+"Clear current search highlight by double tapping SPACE
+nnoremap <SPACE><SPACE> :noh<CR>
 
 "(v)im (c)ommand - execute current line as a vim command
 nmap <silent> ,vc yy:<C-f>p<C-c><CR>
