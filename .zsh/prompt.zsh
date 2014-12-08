@@ -19,35 +19,47 @@ function vcs_info_wrapper {
   [[ -n "$vcs_info_msg_0_" ]] && echo " %{$fg[grey]%}${vcs_info_msg_0_/ /}%{$reset_color%}"
 }
 
-## Functions
-function ssh_state {
-    if [ -n "$SSh_CONNECTION" ]; then
-        echo "%{$fg[red]%}<%{$fg[white]%}SSH%{$fg[red]%}> "
-    fi
-}
-
-function collapse_pwd {
-    if [[ $(pwd) == $HOME ]]; then
-        echo $(pwd)
-    else    
-        echo $(pwd | sed -e "s,^$HOME,~,")
-    fi
-}
-
-function error_code {
-    if [[ $? == 0 ]]; then
-        echo ""
+# prompt
+function prompt_git_dirty() {
+    gitstat=$(git status 2>/dev/null | grep '\(# Untracked\|# Changes\|# Changed but not updated:\)')
+    
+    if [[ $(echo ${gitstat} | grep -c "^# Changes to be committed:$") > 0 ]]; then
+        echo -n $PR_LIGHT_YELLOW
+    elif [[ $(echo ${gitstat} | grep -c "^\(# Untracked files:\|# Changed but not updated:\)$") > 0 ]]; then
+        echo -n $PR_LIGHT_RED
     else
-        echo "%{$fg[white]%}<%{$fg[red]%}%?%{$fg[white]%}>%{$reset_color%}"
-fi
+        echo -n $PR_LIGHT_MAGENTA
+    fi
 }
 
-last_command='%(?.>>.<<)'
+function prompt_current_branch() {
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || return 1
+    echo ${ref#refs/heads/}
+}
 
+function prompt_hostname()
+{
+    case "`hostname`" in
+        "Arch")
+            echo -n "${PR_LIGHT_YELLOW}Arch${PR_NO_COLOR}";;    
+    esac
+}
 
-## Prompts
-PROMPT='
-  %{$fg[red]%}<%{$fg[white]%}$(collapse_pwd)%{$fg[red]%}> $(ssh_state)
-%{$fg[white]%}$last_command%{$reset_color%} '
+function precmd() # Uses: setting user/root PROMPT1 variable and rehashing commands list
+{
+    # Last command status
+    cmdstatus=$?
+    sadface=`[ "$cmdstatus" != "0" ] && echo "${PR_RED}:(${PR_NO_COLOR} "`
 
-RPROMPT='$(error_code)%{$reset_color%}'
+    # Colours
+    usercolour=`[ $UID != 0 ]   && echo $PR_BLUE      || echo $PR_RED`
+    usercolour2=`[ $UID != 0 ]  && echo $WHITE || echo $PR_RED`
+    dircolour=`[ -w "\`pwd\`" ] && echo $PR_YELLOW       || echo $PR_RED`
+
+    # Git branch
+    git="[branch: `prompt_git_dirty``prompt_current_branch`${blue}]"
+
+export PROMPT="
+%{$fg[red]%}┌─[%{$reset_color%}%{$fg[cyan]%}%n%{$reset_color%}%{$fg[yellow]%}知識%{$reset_color%}%{$fg[red]%}]─────────────────────────%{$reset_color%}%{$fg[blue]%}[%~]%{$reset_color%}%{$fg[green]%}`prompt_current_branch &>/dev/null && echo -n $git`%{$reset_color%}
+%{$fg[red]%}└─(%{$reset_color%}%T%{$fg[red]%})(%{$reset_color%}%l%{$fg[red]%})─╼ %{$reset_color%}"
+}

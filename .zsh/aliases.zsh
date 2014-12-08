@@ -13,16 +13,12 @@ stamp2date (){
     date --utc --date "1970-01-01 $1 sec" "+%Y-%m-%d %T"
 }
 
-tiny()
-{
-  if [ -n "$1" ]; then
+tiny(){
+  if [[ -n "$1" ]]; then
     url="$1"
-  else
-    echo "Error: You must pass a URL"
-    exit
+    res=$(curl -s "http://is.gd/api.php?longurl=${url}")
+    echo $res
   fi
-  res=$(curl -s "http://is.gd/api.php?longurl=${url}")
-  echo $res
 }
 
 dateDiff (){
@@ -70,7 +66,7 @@ whichd()
   cd $(which $1 | xargs dirname)
 }
 
-alias t="todo.sh -d /home/chishiki/.todo.cfg $1"
+alias t="task"
 alias calc='orpie'
 alias stamp='date "+%Y-%m-%d"'
 alias trans='transmission-remote-cli'
