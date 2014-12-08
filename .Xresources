@@ -25,11 +25,11 @@ URxvt.clipboard.copycmd:   xsel -ib
 URxvt.clipboard.pastecmd:  xsel -ob
 
 URxvt.cursorColor:  #ff0066
-*pointerColorBackground: #586e75
+*pointerColorBackground: #121212
 *pointerColorForeground: #93a1a1
 
 *foreground:	#ffffff
-*background:	#222222
+*background:	#121212
 *color0:	#393939
 *color8:	#474747
 *color1:	#d82f44
