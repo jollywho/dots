@@ -56,6 +56,6 @@ function timeit()
 end
 
 mp.add_key_binding("m", set_active)
-mp.add_key_binding("a", key_a)
-mp.add_key_binding("A", key_A)
-mp.add_key_binding("R", key_R)
+mp.add_key_binding("s", key_a)
+mp.add_key_binding("S", key_A)
+mp.add_key_binding("r", key_R)

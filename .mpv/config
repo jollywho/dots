@@ -1,5 +1,40 @@
 # Write your default config options here!
 
-osd-font="DejaVu\ Sans\ Mono\ for\ Powerline"
+# Subs
+ass-force-style=Kerning=yes
+demuxer-mkv-subtitle-preroll
+sub-text-font="OpenSans-Semibold"
+sub-text-font-size=40
+sub-text-margin-y=24
+sub-text-color="#FFFFFF"
+sub-text-border-color="#000000"
+sub-text-border-size=2
+sub-text-shadow-offset=1.25
+sub-text-shadow-color="#303030"
+sub-text-spacing=0
 
-sub-text-font="DejaVu\ Sans\ Mono\ for\ Powerline"
+# OSD
+osd-font="OpenSans-Semibold"
+osd-font-size=42
+osd-bar-h=5
+osd-bar-w=90
+osd-bar-align-y=0.5
+osd-border-size=2
+osd-color='#FFFFFF'
+osd-border-color='#000000'
+osd-shadow-color='#303030'
+osd-shadow-offset=1.75
+osd-spacing=0
+
+vo=opengl:lscale=spline64:cscale=spline64
+hwdec=vda
+osc=no
+
+# Tracks
+slang=jp,jpn,en,eng
+alang=jp,jpn,en,eng
+
+# Other
+no-resume-playback
+cache=204800
+lua-opts=osc-seekbarstyle=bar
