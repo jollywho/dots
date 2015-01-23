@@ -24,7 +24,7 @@ URxvt.url-select.underline: true
 URxvt.clipboard.copycmd:   xsel -ib
 URxvt.clipboard.pastecmd:  xsel -ob
 
-URxvt.cursorColor:  #ff0066
+URxvt.cursorColor:  #ff9900
 *pointerColorBackground: #121212
 *pointerColorForeground: #93a1a1
 

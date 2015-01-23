@@ -36,12 +36,13 @@ focus_follows_mouse no
 #...........
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Mod1+Return exec urxvt
 # kill focused window
 bindsym $mod+Shift+Mod1+q kill
 # start dmenu (a program launcher)
 bindsym $mod+Shift+Mod1+Return exec dmenu_run -fn  "-*-termsyn-*-*-*-*-11-*-*-*-*-*-*-*" -nb "#161616" -nf "#909737" -sb "#909737" -sf "#161616"
 
+bindsym $mod+Tab workspace back_and_forth
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -113,7 +114,7 @@ set $ws9 "(九)"
 set $ws0 "(〇)"
 
 # switch to workspace
-bindsym $mod+e workspace $wsE
+bindsym $mod+grave workspace $wsE
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -123,10 +124,9 @@ bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
-bindsym $mod+BackSpace workspace $ws0
 
 # move focused container to workspace
-bindsym $mod+Shift+e move container to workspace $wsE
+bindsym $mod+Shift+grave move container to workspace $wsE
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
