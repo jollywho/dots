@@ -1,6 +1,6 @@
 " Make it beautiful - colors and fonts
 
-colorscheme jellybeans
+colorscheme default
 set background=light
 
 if has("gui_running")
