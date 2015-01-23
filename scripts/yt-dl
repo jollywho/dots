@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+#DEFAULT: download entire playlist
+com="youtube-dl -citw"
+
+while getopts xcu: OPT; do
+  case "$OPT" in
+    c) user="ytuser:";;
+    x) aud="x";;
+    u) url="$OPTARG";;
+  esac
+done
+
+${com}${aud} ${user} ${url}
