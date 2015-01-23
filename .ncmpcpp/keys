@@ -24,9 +24,9 @@
 #
 #key_down_artist = '}'
 #
-key_page_up = 339 21
+key_page_up = 10 21
 #
-key_page_down = 338 4
+key_page_down = 11 4
 #
 key_home = 262 'g'
 #
