@@ -14,3 +14,4 @@ bindkey '^n' down-history
 bindkey '^p' up-history
 bindkey '^u' kill-whole-line
 bindkey '^w' vi-backward-kill-word
+bindkey '^[[Z' reverse-menu-complete

@@ -38,8 +38,14 @@ dateDiff (){
 
 webmc () {
   tdiff=$(dateDiff -s $2 $3)
-  ffmpeg -i "$1" out.ssa
-  ffmpeg -i "$1" -vf subtitles=out.ssa -t $tdiff -ss $2 -cpu-used 0 -threads 4 -codec:v libx264 -crf 23 -preset medium -strict -2 "$1".avi
+  has_subs=$(ffprobe $1 2>&1 | grep "Stream.*: Sub")
+  if [[ -n ${has_subs} ]]
+  then
+    ffmpeg -i "$1" out.ssa
+    ffmpeg -i "$1" -vf subtitles=out.ssa -t $tdiff -ss $2 -cpu-used 0 -threads 4 -codec:v libx264 -crf 23 -preset medium -strict -2 "$1".avi
+  else
+    ffmpeg -i "$1" -t $tdiff -ss $2 -cpu-used 0 -threads 4 -codec:v libx264 -crf 23 -preset medium -strict -2 "$1".avi
+  fi
   ffmpeg -i "$1".avi -cpu-used 0 -threads 4 -c:v libvpx -b:v 3M -c:a libvorbis "$1".webm
   rm out.ssa
   rm "$1".avi
@@ -66,6 +72,8 @@ whichd()
   cd $(which $1 | xargs dirname)
 }
 
+alias ydl="youtube-dl"
+alias scm="rlwrap scheme"
 alias t="task"
 alias calc='orpie'
 alias stamp='date "+%Y-%m-%d"'
@@ -144,7 +152,7 @@ alias gfch='git fetch'
 alias gd='git diff'
 alias gb='git b'
 alias gbd='git b -D -w'
-alias gdc='git diff --cached -w'
+alias gcd='git diff --cached -w'
 alias gpub='grb publish'
 alias gtr='grb track'
 alias gpl='git pull'
