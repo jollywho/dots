@@ -1,0 +1,44 @@
+# feh key configuration.
+# Comments start with a # sign, do not use them mid-line.
+# Each line must be blank, a comment, or a key definition.
+#
+# key definition: <action name> <key1> [<key2> [<key3>]]
+#
+# Each <key> is an X11 keysym (as output by xev) with optional modifier.
+# For instance, C-x would be Ctrl+X, or 4-space Mod4+Space
+
+# Examples for vim-like menu bindings on a qwerty keyboard:
+menu_select space Return
+
+# Same for image navigation ...
+next_img C-j Right space
+prev_img C-k Left BackSpace
+
+# and image movement
+scroll_up    k C-Up
+scroll_down  j C-Down
+scroll_left  h C-Left
+scroll_right l C-Right
+scroll_up_page K
+scroll_down_page J
+scroll_left_page H
+scroll_right_page L
+
+# remove now conflicts with toggle_filenames, so change that
+toggle_filenames v
+full_screen f
+
+# zooming
+zoom_in  C-Up f
+zoom_out C-Down a
+zoom_default d
+zoom_fit s
+
+# I only hit these accidentaly
+save_image
+save_filelist
+
+toggle_keep_vp o
+toggle_filenames i
+# This leaves some conflicts with existing default bindings, but you should
+# get the idea.  And I'm not gonna fix the conflicts, I don't use qwerty ;-)
