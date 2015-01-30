@@ -55,7 +55,9 @@ bindsym $mod+Shift+Escape exec slimlock
 
 # change focus
 bindsym $mod+Shift+h focus left
+bindsym $mod+Shift+j focus down
 bindsym $mod+Shift+l focus right
+bindsym $mod+Shift+k focus up
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -64,16 +66,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-#bindsym $mod+Shift+h move left
-#bindsym $mod+Shift+j move down
-#bindsym $mod+Shift+k move up
-#bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Mod1+h move left
+bindsym $mod+Shift+Mod1+j move down
+bindsym $mod+Shift+Mod1+k move up
+bindsym $mod+Shift+Mod1+l move right
 
 # split in horizontal orientation
 bindsym $mod+Shift+v split h
@@ -82,18 +78,18 @@ bindsym $mod+Shift+v split h
 #bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen
+bindsym $mod+Shift+Mod1+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
-#bindsym $mod+s layout stacking
+#bindsym $mod+Shift+Mod1+s layout stacking
 #bindsym $mod+w layout tabbed
-#bindsym $mod+e layout toggle split
+bindsym $mod+Shift+Mod1+s layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-#bindsym $mod+space focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 #bindsym $mod+a focus parent
@@ -137,24 +133,17 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 
-
 # resize window (you can also use the mouse for that)
+bindsym $mod+Mod1+Shift+x mode "resize"
 mode "resize" {
-# These bindings t the window’s height.
-  bindsym $mod+h resize shrink width 10 px or 10 ppt
-    #bindsym $mod+j resize grow height 10 px or 10 ppt
-    #bindsym $mod+k resize shrink height 10 px or 10 ppt
-    #bindsym $mod+l resize grow width 10 px or 10 ppt
-
-# same bindings, but for the arrow keys
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
+  bindsym l resize shrink width 10 px or 10 ppt
+  bindsym j resize grow height 10 px or 10 ppt
+  bindsym k resize shrink height 10 px or 10 ppt
+  bindsym h resize grow width 10 px or 10 ppt
 
 # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 #Laptop extra keys
@@ -163,17 +152,15 @@ bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
 bindsym XF86AudioMute exec $(amixer get Master | grep off > /dev/null && amixer -q set Master unmute) || amixer -q set Master mute
 bindsym XF86MonBrightnessDown  exec  xbacklight -dec 2%
 bindsym XF86MonBrightnessUp    exec  xbacklight -inc 2%
-#bindsym $mod+x mode "resize"
 
 #Status bar
-
 bar {
-    mode dock
-    position top
-    status_command ~/.i3/conky
-    font pango:Terminus 11px
-    tray_output primary
-    colors {
+  mode dock
+  position top
+  status_command ~/.i3/conky
+  font pango:Terminus 11px
+  tray_output primary
+  colors {
     background #161616
     statusline #605c5a
     focused_workspace  #161616 #161616 #909737
@@ -186,5 +173,5 @@ bar {
     active_workspace   #333333 #5f676a #ffffff
     inactive_workspace #333333 #222222 #888888
     urgent_workspace   #aa0000 #990000 #ffffff
-    }
+  }
 }
