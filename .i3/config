@@ -157,17 +157,22 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 
+#Laptop extra keys
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
+bindsym XF86AudioMute exec $(amixer get Master | grep off > /dev/null && amixer -q set Master unmute) || amixer -q set Master mute
+bindsym XF86MonBrightnessDown  exec  xbacklight -dec 2%
+bindsym XF86MonBrightnessUp    exec  xbacklight -inc 2%
 #bindsym $mod+x mode "resize"
 
 #Status bar
 
 bar {
-    output HDMI-0
     mode dock
     position top
     status_command ~/.i3/conky
     font pango:Terminus 11px
-    tray_output none
+    tray_output primary
     colors {
     background #161616
     statusline #605c5a

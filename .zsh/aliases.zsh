@@ -72,6 +72,7 @@ whichd()
   cd $(which $1 | xargs dirname)
 }
 
+alias tv="livestreamer --player mpv"
 alias ydl="youtube-dl"
 alias scm="rlwrap scheme"
 alias t="task"
