@@ -4,18 +4,20 @@ background no
 max_text_width 0
 update_interval 1.2
 total_run_times 0
-double_buffer no
+double_buffer yes
+update_interval_on_battery 1.2
 
 #{"full_text" : "${mpd_file}",                                 "color" : "\#f9cff0"},
 
 TEXT
 [
- {"full_text" : "${color ul}${execi 30 sensors | grep 'Core 0' | cut -c16-21}",
-                                                               "color" : "\#c71585"},
- {"full_text" : "   ҉ ${cpu cpu0}%",                               "color" : "\#f33fd5"},
- {"full_text" : "☊${mpd_vol}%",                                "color" : "\#fff79a"},
- {"full_text" : "${addr enp4s0}",                            "color" : "\#99ff99"},
+ {"full_text" : " ", "color" : ""},
+ {"full_text" : "${battery} ⚡${battery_time BAT0}",            "color" : "\#fff79a"},
+ {"full_text" : "   ҉ ${cpu cpu0}%",                            "color" : "\#f33fd5"},
+ {"full_text" : "♫${mpd_vol}%",                                "color" : "\#99ff99"},
+ {"full_text" : "⎨${wireless_essid wlp3s0}⎬",                    "color" : "\#CCAA22"},
+ {"full_text" : "☊${exec amixer get Master -M | grep -oE "[[:digit:]]*%" | head -1}",                                 "color" : "\#aaaaff"},
  {"full_text" : "⌬ ${mem}",                                 "color" : "\#aaaaff"},
- {"full_text" : "Load: ${loadavg 1}",                          "color" : "\#8a46ff"},
- {"full_text" : "${tztime US/Eastern %d-%m#%H:%M}",            "color" : "\#CCAAee"}
+ {"full_text" : "Load:${loadavg 1}",                          "color" : "\#8a46ff"},
+ {"full_text" : "${tztime US/Eastern %d-%m#%H:%M}",            "color" : "\#FFFFFF"}
 ],
