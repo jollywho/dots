@@ -9,6 +9,10 @@ visualizer_look = "┼a"
 visualizer_color = "cyan"
 
 # Playlist
+user_interface="alternative"
+alternative_header_first_line_format ="$b$5«« {%a}|{%t} »»$9$/b"
+alternative_header_second_line_format ="$b$5 {%b}|{%f} {%b} ({%y})$9$/b"
+
 song_columns_list_format = "(6f)[blue]{l} (25)[red]{a} (40)[green]{t|f} (30)[yellow]{b}"
 now_playing_prefix = "$b$5»$7»$1» "
 now_playing_suffix = "$/b"
