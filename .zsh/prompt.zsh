@@ -1,5 +1,10 @@
 setopt prompt_subst
 autoload -U vcs_info
+setopt inc_append_history
+setopt share_history
+
+SAVEHIST=1000
+HISTFILE=~/.zsh_history
 
 zstyle ':vcs_info:*'              enable        git cvs svn
 zstyle ':vcs_info:*'              actionformats '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
