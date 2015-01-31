@@ -74,8 +74,14 @@ vmap ,{ c{<C-R>"}<ESC>
 
 map ,` ysiw`
 
+" This mapping makes macros even easier to remember:
+" hit qq to record, q to stop recording, and Q to apply
+nnoremap Q @q
+vnoremap Q :norm @q<cr>
+
 " gary bernhardt's hashrocket
 imap <c-l> <space>=><space>
+imap <c-i> <space>-><space>
 
 " Change inside various enclosures with Cmd-" and Cmd-'
 " The f makes it find the enclosure so you don't have
