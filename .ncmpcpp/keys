@@ -38,9 +38,9 @@ key_end = 360 'G'
 #
 #key_delete = 330 'd'
 #
-key_volume_up = 261 '+'
+key_volume_up = 261 '='
 #
-key_volume_down = 260 '_'
+key_volume_down = 260 '-'
 #
 key_prev_column = 'h'
 #
@@ -76,7 +76,7 @@ key_playlist_editor = '5' 270
 #
 key_music_visualizer = '9' 57
 #
-#key_clock = '0' 274
+key_clock = '0' 274
 #
 #key_server_info = '@'
 #

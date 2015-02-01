@@ -203,7 +203,7 @@ def_key "right"
 def_key "right"
   volume_up
 
-def_key "+"
+def_key "="
   volume_up
 
 def_key "h"
@@ -263,7 +263,7 @@ def_key "7"
 def_key "9"
   show_visualizer
 
-def_key "="
+def_key "0"
   show_clock
 
 def_key "@"
