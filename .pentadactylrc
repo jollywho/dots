@@ -107,6 +107,7 @@ nmap <C-o> <M-Right>
 map <C-k> <scroll-up>
 map <C-j> <scroll-down>
 
+map gf <NOP>
 map <C-b> <NOP>
 map <C-h> <NOP>
 map O t
@@ -128,7 +129,7 @@ map -m n,v,i,c,t <C-c> <Pass>
 map -m n,v,i,c,t <C-l> <Pass>
 map -m n,v,i,c,t <C-v> <Pass>
 map -m n,v,i,c,t <C-x> <Pass>
-map -m n,v,i,c,t <C-P> <NOP>
+map -m n,v,i,t   <C-P> <NOP>
 vmap -builtin ; :
 vmap -builtin : ;
 nmap -builtin ; :
