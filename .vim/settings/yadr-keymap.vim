@@ -81,7 +81,7 @@ vnoremap Q :norm @q<cr>
 
 " gary bernhardt's hashrocket
 imap <c-l> <space>=><space>
-imap <c-i> <space>-><space>
+imap <c-y> <space>-><space>
 
 " Change inside various enclosures with Cmd-" and Cmd-'
 " The f makes it find the enclosure so you don't have
