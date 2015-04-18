@@ -2,7 +2,8 @@ set titlestring=Mozilla\ Firefox
 " complete search engine suguest
 set complete=location,suggestion,bookmark
 " use home row letters for hints instead of numbers
-set hintkeys='saduilewcmpgh'
+set hintkeys='weasc'
+
 " only follow hints when press enter
 set followhints=1
 " highlight all search matches, not just the first
@@ -24,9 +25,10 @@ javascript dactyl.beep = function() { return false; }
 nmap ee ;!/usr/bin/eipsh<CR><CR>
 
 command! -nargs=* -description='yt search' yt tabopen http://youtube.com/results?search_query=<args>
-command! -nargs=* -description='tor search' tor tabopen https://torrentz.eu/search?q=<args>
-command! -nargs=* -description='nya search' nya tabopen http://www.nyaa.se/?page=search&term=<args>&sort=2
+command! -nargs=* -description='to search' to tabopen https://torrentz.eu/search?q=<args>
+command! -nargs=* -description='na search' na tabopen http://www.nyaa.se/?page=search&term=<args>&sort=2
 command! -nargs=* -description='jo search' jo tabopen http://jisho.org/words?jap=<args>
+command! -nargs=* -description='je search' je tabopen http://jisho.org/words?eng=<args>
 
 highlight AddonDescription color: #85919b;
 highlight AddonDescrption:not([active]) color: #4f585d;
@@ -94,7 +96,7 @@ nmap a <Nop>
 map x <Esc>ive
 map X <Esc><Esc>
 
-#map F g;b
+"map F g;b
 map -m hints j     -ex normal! j
 map -m hints k     -ex normal! k
 map -m hints <C-d>     -ex normal! <C-d>
@@ -110,7 +112,6 @@ map <C-j> <scroll-down>
 map gf <NOP>
 map <C-b> <NOP>
 map <C-h> <NOP>
-map O t
 
 nmap J gT
 nmap K gt
@@ -122,6 +123,7 @@ nmap Y <yank-selection>
 nmap <silent> <Leader>w :smartLayoutClean<CR>
 nmap <silent> <Leader>W :smartLayoutNormal<CR>
 nmap R :reload<CR>
+nmap ,m ;:execute '!m="' + buffer.URL + '" ; mpv --really-quiet "$m" 2&> /dev/null'<CR><CR>
 
 " bypass pentadactyl commands
 map -m n,v,i,c,t <C-a> <Pass>
@@ -130,7 +132,12 @@ map -m n,v,i,c,t <C-l> <Pass>
 map -m n,v,i,c,t <C-v> <Pass>
 map -m n,v,i,c,t <C-x> <Pass>
 map -m n,v,i,t   <C-P> <NOP>
+
 vmap -builtin ; :
 vmap -builtin : ;
 nmap -builtin ; :
 nmap -builtin : ;
+nmap -builtin O t
+nmap -builtin t O
+
+nmap w @q
