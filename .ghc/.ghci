@@ -1,0 +1,9 @@
+:set +m
+:set +t
+
+:set prompt "\001\ESC[34;1m\002λ\001\ESC[93m\002❩\001\ESC[0;48;05;233m\002 "
+:set prompt2 "\001\ESC[93m\002❩\001\ESC[0;48;05;233m\002 "
+
+:def hoogle \x -> return $ ":!hoogle \"" ++ x ++ "\""
+:def doc \x -> return $ ":!hoogle --info \"" ++ x ++ "\""
+:def source readFile
