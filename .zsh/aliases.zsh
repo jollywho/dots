@@ -72,8 +72,18 @@ whichd()
   cd $(which $1 | xargs dirname)
 }
 
-alias tv="livestreamer --player mpv"
+#expand following word when using sudo
+alias sudo='sudo '
+
+alias pkS="packer-color -S"
+alias pks="packer-color -Ss"
+alias pk="packer-color"
+alias diff="colordiff"
+
 alias ydl="youtube-dl"
+alias ydl3="youtube-dl -x"
+alias ydlg="youtube-dl -citw"
+
 alias scm="rlwrap scheme"
 alias t="task"
 alias calc='orpie'
