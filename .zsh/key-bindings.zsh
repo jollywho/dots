@@ -8,7 +8,7 @@ bindkey '^r' history-incremental-search-backward    # [Ctrl-r] - Search backward
 # emacs style
 bindkey '^s' beginning-of-line
 bindkey '^x' end-of-line
-bindkey '^e' vi-forward-blank-word-end
+bindkey '^e' forward-word
 bindkey '^b' vi-backward-word
 bindkey '^n' down-history
 bindkey '^p' up-history

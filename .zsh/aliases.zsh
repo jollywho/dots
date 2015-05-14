@@ -72,6 +72,7 @@ whichd()
   cd $(which $1 | xargs dirname)
 }
 
+<<<<<<< HEAD
 #expand following word when using sudo
 alias sudo='sudo '
 
@@ -84,6 +85,13 @@ alias ydl="youtube-dl"
 alias ydl3="youtube-dl -x"
 alias ydlg="youtube-dl -citw"
 
+=======
+alias diff="colordiff"
+alias tv="livestreamer --player mpv"
+alias ydl="youtube-dl"
+alias ydl3="youtube-dl -x"
+alias ydlg="youtube-dl -citw"
+>>>>>>> 394fa5e3b0e70a0de43223386704c086cb1f04e7
 alias scm="rlwrap scheme"
 alias t="task"
 alias calc='orpie'

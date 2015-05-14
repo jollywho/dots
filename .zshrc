@@ -58,6 +58,11 @@ select-word-style bash
 
 bindkey '^[[Z' reverse-menu-complete
 
+# disable XOFF to use C-s in vim for saving a file
+# http://raamdev.com/2007/recovering-from-ctrls-in-putty/
+stty ixany
+stty ixoff -ixon
+
 [[ $TASK == show ]] && task long
 
 for snippets ($HOME/.zsh/*.zsh(N))
