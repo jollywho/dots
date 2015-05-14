@@ -72,8 +72,11 @@ whichd()
   cd $(which $1 | xargs dirname)
 }
 
+alias diff="colordiff"
 alias tv="livestreamer --player mpv"
 alias ydl="youtube-dl"
+alias ydl3="youtube-dl -x"
+alias ydlg="youtube-dl -citw"
 alias scm="rlwrap scheme"
 alias t="task"
 alias calc='orpie'
