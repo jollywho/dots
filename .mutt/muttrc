@@ -1,6 +1,7 @@
 source ~/.mutt/ac1
-source ~/.mutt/ac2
 source ~/.mutt/ac3
+source ~/.mutt/ac4
+source ~/.mutt/ac2
 
 set imap_check_subscribed
 set sort     = threads
@@ -14,11 +15,12 @@ set alias_file       = ~/.mutt/aliases
 set mailcap_path     = ~/.mutt/mailcap
 source ~/.mutt/col
 
+set sleep_time = 0
+
 #keys
 set index_format = "%3N %4C %Z %{%b %d} %-15.15F (%4c) %?M?%M> ?%s"
 set quote_regexp = "^([ \t]*[>])+"
 
-set smart_wrap
 set pager_index_lines = 8
 
 set abort_nosubject  = no
@@ -36,18 +38,21 @@ bind pager j  next-line
 bind pager k  previous-line
 bind pager gg top
 bind pager G  bottom
-bind pager J  next-undeleted
-bind pager K  previous-undeleted
+bind generic ^J next-page
+bind generic ^K previous-page
 bind pager R  group-reply
 
 bind index gg first-entry
 bind index G  last-entry
 bind index R  group-reply
+bind index ^R  read-subthread
 bind index -  collapse-thread
 bind index _  collapse-all
 
 set sidebar_width=20
 set sidebar_visible=yes
+
+set editor = 'vim + -c "set textwidth=0"'
 
 bind index,pager \CP sidebar-prev
 bind index,pager \CN sidebar-next
@@ -58,6 +63,8 @@ macro index M "T~N<enter>;WNT~O<enter>;WO\CT~A<enter>" "Mark all messages read"
 macro index,pager g1 '<sync-mailbox><enter-command>source ~/.mutt/ac1 <enter><change-folder>!<enter>'
 macro index,pager g2 '<sync-mailbox><enter-command>source ~/.mutt/ac2 <enter><change-folder>!<enter>'
 macro index,pager g3 '<sync-mailbox><enter-command>source ~/.mutt/ac3 <enter><change-folder>!<enter>'
+macro index,pager g4 '<sync-mailbox><enter-command>source ~/.mutt/ac4 <enter><change-folder>!<enter>'
+macro index,pager g5 '<sync-mailbox><enter-command>source ~/.mutt/ac4 <enter><change-folder>!<enter>'
 
 set allow_ansi
 auto_view text/x-diff
