@@ -123,7 +123,7 @@ nmap Y <yank-selection>
 nmap <silent> <Leader>w :smartLayoutClean<CR>
 nmap <silent> <Leader>W :smartLayoutNormal<CR>
 nmap R :reload<CR>
-nmap ,m ;:execute '!m="' + buffer.URL + '" ; mpv --really-quiet "$m" 2&> /dev/null'<CR><CR>
+nmap U ;:execute '!m="' + buffer.URL + '" ; mpv --really-quiet "$m" &'<CR><CR>d
 
 " bypass pentadactyl commands
 map -m n,v,i,c,t <C-a> <Pass>
