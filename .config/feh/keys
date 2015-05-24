@@ -15,7 +15,7 @@ next_img C-j Right space
 prev_img C-k Left BackSpace
 
 # and image movement
-scroll_up    k C-Up
+#scroll_up    k C-Up
 scroll_down  j C-Down
 scroll_left  h C-Left
 scroll_right l C-Right
@@ -26,19 +26,18 @@ scroll_right_page L
 
 # remove now conflicts with toggle_filenames, so change that
 toggle_filenames v
-full_screen f
+toggle_fullscreen f
 
 # zooming
-zoom_in  C-Up f
-zoom_out C-Down a
+zoom_in  a
+zoom_out s
 zoom_default d
-zoom_fit s
+zoom_fit z
 
 # I only hit these accidentaly
 save_image
 save_filelist
 
-toggle_keep_vp o
 toggle_filenames i
 # This leaves some conflicts with existing default bindings, but you should
 # get the idea.  And I'm not gonna fix the conflicts, I don't use qwerty ;-)
