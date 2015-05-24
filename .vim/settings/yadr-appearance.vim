@@ -1,7 +1,6 @@
 " Make it beautiful - colors and fonts
 
-colorscheme default
-set background=light
+let g:hybrid_use_Xresources = 1
 
 if has("gui_running")
   "tell the term has 256 colors
