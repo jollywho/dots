@@ -163,7 +163,7 @@ key_prev_found_position = 'N'
 #
 #key_save_playlist = 'S'
 #
-#key_go_to_now_playing = 'o'
+key_go_to_now_playing = 'o'
 #
 #key_toggle_auto_center = 'U'
 #

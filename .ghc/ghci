@@ -21,7 +21,7 @@ right_blacket="s/\]/$BLUE&$RESET/g;"
 no_instance="s/^\s*No instance/$RED&$RESET/g;"
 interactive="s/^<[^>]*>/$RED&$RESET/g;"
 
-exec "`which ghc`" --interactive ${1+"$@"} 2>&1 |\
+exec "`which ghc`" --interactive |\
     sed "$load_failed\
          $load_done\
          $no_instance\

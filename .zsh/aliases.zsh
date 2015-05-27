@@ -72,6 +72,7 @@ whichd()
   cd $(which $1 | xargs dirname)
 }
 
+alias muttf="mutt -F ~/.mutt/mutt_f"
 #expand following word when using sudo
 alias sudo='sudo '
 
