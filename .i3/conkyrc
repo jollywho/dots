@@ -10,14 +10,14 @@ update_interval_on_battery 1.2
 #{"full_text" : "${mpd_file}",                                 "color" : "\#f9cff0"},
 
 TEXT
-[
- {"full_text" : " ", "color" : ""},
- {"full_text" : "${battery} ⚡${battery_time BAT0}",            "color" : "\#fff79a"},
- {"full_text" : "   ҉ ${cpu cpu0}%",                            "color" : "\#f33fd5"},
- {"full_text" : "♫${mpd_vol}%",                                "color" : "\#99ff99"},
- {"full_text" : "⎨${wireless_essid wlp3s0}⎬",                    "color" : "\#CCAA22"},
- {"full_text" : "☊${exec amixer get Master -M | grep -oE "[[:digit:]]*%" | head -1}",                                 "color" : "\#aaaaff"},
- {"full_text" : "⌬ ${mem}",                                 "color" : "\#aaaaff"},
- {"full_text" : "Load:${loadavg 1}",                          "color" : "\#8a46ff"},
- {"full_text" : "${tztime US/Eastern %d-%m#%H:%M}",            "color" : "\#FFFFFF"}
-],
+  [
+{"full_text" : " ", "color" : ""},
+{"full_text" : "${battery} ⚡${battery_time BAT0}",            "color" : "\#fff79a"},
+{"full_text" : "   ҉ ${cpu cpu0}%",                            "color" : "\#f33fd5"},
+{"full_text" : "♫${mpd_vol}%",                                "color" : "\#99ff99"},
+{"full_text" : "❨${wireless_essid wlp3s0}❩",                    "color" : "\#CCAA22"},
+{"full_text" : "☊${exec amixer get Master -M | grep -oE "[[:digit:]]*%" | head -1}",                                 "color" : "\#aaaaff"},
+{"full_text" : "⌬ ${mem}",                                 "color" : "\#aaaaff"},
+{"full_text" : "Load:${loadavg 1}",                          "color" : "\#8a46ff"},
+{"full_text" : "${tztime Europe/London %d-%m#%H:%M}",            "color" : "\#FFFFFF"}
+  ],
