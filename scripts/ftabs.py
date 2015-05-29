@@ -1,4 +1,5 @@
 #!/usr/bin/python2
+# print active firefox tabs from periodic recovery file
 import os
 import glob
 import json
