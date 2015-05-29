@@ -113,6 +113,10 @@ map gf <NOP>
 map <C-b> <NOP>
 map <C-h> <NOP>
 
+#zoom
+map a ZI
+map s ZO
+
 nmap J gT
 nmap K gt
 " disable highlight
