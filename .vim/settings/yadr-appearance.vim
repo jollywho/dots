@@ -1,6 +1,10 @@
 " Make it beautiful - colors and fonts
 
 let g:hybrid_use_Xresources = 1
+set t_Co=256
+colorscheme gruvbox
+set background=dark
+highlight Normal ctermbg=NONE
 
 if has("gui_running")
   "tell the term has 256 colors
