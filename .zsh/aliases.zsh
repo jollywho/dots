@@ -6,6 +6,7 @@ dots=$HOME/dots
 alias muttf="mutt -F ~/.mutt/mutt_f"
 #expand following word when using sudo
 alias sudo='sudo '
+alias p='pass'
 
 alias pkS="packer-color -S"
 alias pks="packer-color -Ss"
