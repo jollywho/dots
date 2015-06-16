@@ -6,6 +6,9 @@ colorscheme gruvbox
 set background=dark
 highlight Normal ctermbg=NONE
 
+highlight VertSplit ctermbg=NONE ctermfg=black
+set fillchars+=vert:\╠
+
 if has("gui_running")
   "tell the term has 256 colors
   set t_Co=256
