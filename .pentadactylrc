@@ -110,12 +110,18 @@ map <C-k> <scroll-up>
 map <C-j> <scroll-down>
 
 map gf <NOP>
+map gh <NOP>
+map gH <NOP>
 map <C-b> <NOP>
 map <C-h> <NOP>
 
 #zoom
 map a ZI
 map s ZO
+
+nmap I <insert>
+nmap u <scroll-down>
+nmap i <scroll-up>
 
 nmap J gT
 nmap K gt
