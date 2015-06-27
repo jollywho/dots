@@ -4,12 +4,10 @@
 dots=$HOME/dots
 
 alias muttf="mutt -F ~/.mutt/mutt_f"
-#expand following word when using sudo
-alias sudo='sudo '
 alias p='pass'
 
-alias pkS="packer-color -S"
-alias pks="packer-color -Ss"
+alias tt="task calendar"
+alias pks="packer-color -S"
 alias pk="packer-color"
 alias diff="colordiff"
 
