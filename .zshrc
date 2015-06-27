@@ -2,6 +2,7 @@
 
 fpath=($fpath /usr/share/doc/task/scripts/zsh)
 PATH="`ruby -rubygems -e 'puts Gem.user_dir'`/bin:$PATH"
+qp(){$HOME/qp/}
 
 autoload -U colors && colors
 autoload -U compinit && compinit

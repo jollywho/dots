@@ -1,11 +1,11 @@
 mpd_crossfade_time = "5"
 
-visualizer_in_stereo = "no"
+visualizer_in_stereo = "yes"
 visualizer_fifo_path = "/tmp/mpd.fifo"
 visualizer_output_name = "FIFO"
-visualizer_sync_interval = "200"
-visualizer_type = "wave" (spectrum/wave)
-visualizer_look = "┼a"
+visualizer_sync_interval = "60"
+visualizer_type = "spectrum" (spectrum/wave)
+visualizer_look = "●┃"
 visualizer_color = "cyan"
 
 # Playlist
