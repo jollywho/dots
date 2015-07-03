@@ -19,5 +19,5 @@ TEXT
 {"full_text" : "☊${exec amixer get Master -M | grep -oE "[[:digit:]]*%" | head -1}",                                 "color" : "\#aaaaff"},
 {"full_text" : "⌬ ${mem}",                                 "color" : "\#aaaaff"},
 {"full_text" : "Load:${loadavg 1}",                          "color" : "\#8a46ff"},
-{"full_text" : "${tztime Europe/London %d-%m#%H:%M}",            "color" : "\#FFFFFF"}
+{"full_text" : "${tztime America/Toronto %d-%m#%H:%M}",            "color" : "\#FFFFFF"}
   ],
