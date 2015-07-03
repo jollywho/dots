@@ -7,7 +7,9 @@ alias muttf="mutt -F ~/.mutt/mutt_f"
 alias p='pass'
 
 alias tt="task calendar"
-alias pks="packer-color -S"
+alias pki="packer-color -Si"
+alias pks="packer-color -Ss"
+alias pkS="packer-color -S"
 alias pk="packer-color"
 alias diff="colordiff"
 
