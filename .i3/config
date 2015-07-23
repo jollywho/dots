@@ -166,6 +166,8 @@ bar {
   mode dock
   position top
   status_command ~/.i3/conky
+  wheel_up_cmd nop
+  wheel_down_cmd nop
   font pango:Terminus 11px
   tray_output primary
   colors {
