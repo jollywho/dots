@@ -219,6 +219,9 @@ vnoremap ; :
 vnoremap : ;
 nnoremap ; :
 nnoremap : ;
+nnoremap <C-h> gT
+nnoremap <C-l> gT
+" ============================
 " ============================
 " Tabularize - alignment
 " ============================
@@ -240,3 +243,5 @@ map <D-%> :so %<CR>
 
 " ,hp = html preview
 map <silent> ,hp :!open -a Safari %<CR><CR>
+nnoremap <leader>p :Unite file<cr>
+let g:clever_f_ignore_case = 1
