@@ -1,5 +1,4 @@
 Bundle "jistr/vim-nerdtree-tabs.git"
 Bundle "scrooloose/nerdtree.git"
 Bundle "rhysd/clever-f.vim"
-Bundle "Shougo/unite.vim"
-Bundle "Shougo/vimproc.vim"
+Bundle "kien/ctrlp.vim"

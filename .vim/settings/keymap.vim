@@ -166,8 +166,8 @@ map <silent> <D-9> :tabn 9<cr>
 " Create window splits easier. The default
 " way is Ctrl-w,v and Ctrl-w,s. I remap
 " this to vv and ss
-nnoremap <silent> vv <C-w>v
-nnoremap <silent> ss <C-w>s
+nnoremap <silent> vv :vnew<CR>
+nnoremap <silent> ss :new<CR>
 vmap J <NOP>
 vmap K <NOP>
 
@@ -220,7 +220,7 @@ vnoremap : ;
 nnoremap ; :
 nnoremap : ;
 nnoremap <C-h> gT
-nnoremap <C-l> gT
+nnoremap <C-l> gt
 " ============================
 " ============================
 " Tabularize - alignment
@@ -243,5 +243,8 @@ map <D-%> :so %<CR>
 
 " ,hp = html preview
 map <silent> ,hp :!open -a Safari %<CR><CR>
-nnoremap <leader>p :Unite file<cr>
+let g:ctrlp_map = '<leader>p'
+let g:ctrlp_cmd = 'CtrlP'
+nnoremap <leader>p :Unite file buffer<cr>
+nnoremap gb :ls<CR>:b<Space>
 let g:clever_f_ignore_case = 1
