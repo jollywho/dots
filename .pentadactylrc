@@ -2,7 +2,7 @@ set titlestring=Mozilla\ Firefox
 " complete search engine suguest
 set complete=location,suggestion,bookmark
 " use home row letters for hints instead of numbers
-set hintkeys='weasc'
+set hintkeys='weascgt'
 
 " only follow hints when press enter
 set followhints=1
@@ -29,6 +29,7 @@ command! -nargs=* -description='to search' to tabopen https://torrentz.eu/search
 command! -nargs=* -description='na search' na tabopen http://www.nyaa.se/?page=search&term=<args>&sort=2
 command! -nargs=* -description='jo search' jo tabopen http://jisho.org/words?jap=<args>
 command! -nargs=* -description='je search' je tabopen http://jisho.org/words?eng=<args>
+command! -nargs=* -description='cc' cc tabopen http://google.com/search?q=-c%23+%2B"C"+<args>
 
 highlight AddonDescription color: #85919b;
 highlight AddonDescrption:not([active]) color: #4f585d;
@@ -133,7 +134,7 @@ nmap Y <yank-selection>
 nmap <silent> <Leader>w :smartLayoutClean<CR>
 nmap <silent> <Leader>W :smartLayoutNormal<CR>
 nmap R :reload<CR>
-nmap U ;:execute '!m="' + buffer.URL + '" ; mpv --really-quiet "$m" &'<CR><CR>d
+nmap U ;:execute '!m="' + buffer.URL + '" ; mpv --fs --really-quiet "$m" &'<CR><CR>d
 
 " bypass pentadactyl commands
 map -m n,v,i,c,t <C-a> <Pass>
@@ -151,3 +152,7 @@ nmap -builtin O t
 nmap -builtin t O
 
 nmap w @q
+
+cmap <C-s> <C-Home>
+cmap <C-b> <C-Left>
+cmap <C-e> <C-Right>

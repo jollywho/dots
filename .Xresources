@@ -1,8 +1,8 @@
 ! -- Fonts -- !
-URxvt.font: xft:Inconsolata:pixelsize=16,xft:Droid Sans Mono:pixelsize=14,xft:DejaVu Sans Mono:pixelsize=14,xft:Droid Sans Fallback:pixelsize=14,xft:FreeSans:pixelsize=14,xft:FreeSans:pixelsize=14
-URxvt.boldFont: xft:Inconsolata:pixelsize=16,xft:Droid Sans Mono:pixelsize=14,xft:DejaVu Sans Mono:pixelsize=14,xft:Droid Sans Fallback:pixelsize=14,xft:FreeSans:pixelsize=14,xft:FreeSans:pixelsize=14
-URxvt.italicFont: xft:Inconsolata:pixelsize=16,xft:Droid Sans Mono:pixelsize=14,xft:DejaVu Sans Mono:pixelsize=14,xft:Droid Sans Fallback:pixelsize=14,xft:FreeSans:pixelsize=14,xft:FreeSans:pixelsize=14
-URxvt.boldItalicFont: xft:Inconsolata:pixelsize=16,xft:Droid Sans Mono:pixelsize=14,xft:DejaVu Sans Mono:pixelsize=14,xft:Droid Sans Fallback:pixelsize=14,xft:FreeSans:pixelsize=14,xft:FreeSans:pixelsize=14
+URxvt.font: xft:DejaVu Sans Mono:pixelsize=16,xft:Droid Sans Fallback:pixelsize=16,xft:FreeSans:pixelsize=16,xft:Sazanami Mincho,xft:Source Han Sans JP Heavy
+URxvt.boldFont: xft:Inconsolata:pixelsize=16,xft:Droid Sans Mono:pixelsize=16,xft:DejaVu Sans Mono:pixelsize=16,xft:Droid Sans Fallback:pixelsize=16,xft:FreeSans:pixelsize=16,xft:FreeSans:pixelsize=16,xft:Sazanami Mincho,xft:Source Han Sans JP Heavy
+URxvt.italicFont: xft:Inconsolata:pixelsize=16,xft:Droid Sans Mono:pixelsize=16,xft:DejaVu Sans Mono:pixelsize=16,xft:Droid Sans Fallback:pixelsize=16,xft:FreeSans:pixelsize=16,xft:FreeSans:pixelsize=16,xft:Sazanami Mincho,xft:Source Han Sans JP Heavy
+URxvt.boldItalicFont: xft:Inconsolata:pixelsize=16,xft:Droid Sans Mono:pixelsize=16,xft:DejaVu Sans Mono:pixelsize=16,xft:Droid Sans Fallback:pixelsize=16,xft:FreeSans:pixelsize=16,xft:FreeSans:pixelsize=16,xft:Sazanami Mincho,xft:Source Han Sans JP Heavy
 
 URxvt.internalBorder: 1
 URxvt.iso14755: false
@@ -52,7 +52,7 @@ URxvt.color14:	#A3BABF
 URxvt.color7:	#DDEEDD
 URxvt.color15:	#6C887A
 
-URxvt.cursor : #839496
+URxvt.cursorColor : #8700ff
 
 
 Xft.autohint: 0

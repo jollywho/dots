@@ -2,3 +2,5 @@ Bundle "jistr/vim-nerdtree-tabs.git"
 Bundle "scrooloose/nerdtree.git"
 Bundle "rhysd/clever-f.vim"
 Bundle "kien/ctrlp.vim"
+Bundle 'rstacruz/vim-remux'
+Bundle 'fidian/hexmode'

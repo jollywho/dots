@@ -8,6 +8,8 @@
 .vim/.vundles.local
 .vim/sessions
 .netrwhist
+.weechat/logs
+.weechat/.log
 bin/subl
 tags
 mpd/database

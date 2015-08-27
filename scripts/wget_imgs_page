@@ -1,0 +1,3 @@
+#!/bin/sh
+# download all images on page
+wget -H -A '.webm,.jpg,.png,.gif,.swf' -rc -nd -Di.4cdn.org -P pics -erobots=off --no-clobber $1
