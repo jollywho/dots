@@ -5,6 +5,7 @@ set t_Co=256
 colorscheme gruvbox
 set background=dark
 highlight Normal ctermbg=NONE
+highlight clear SignColumn
 
 highlight VertSplit ctermbg=NONE ctermfg=black
 set fillchars+=vert:\╠
