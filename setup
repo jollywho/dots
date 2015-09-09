@@ -48,9 +48,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -s dots/.xinitrc .
   ln -s dots/.xResources .
   ln -s dots/.i3 .
-  ln -s dots/.config/dwb .config/dwb
   pacman -S i3-wm
-  pacman -S dwb
 fi
 
 #Media

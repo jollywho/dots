@@ -144,6 +144,9 @@ nnoremap <silent> <S-j> <C-w>j
 nnoremap <silent> <C-k> <C-u>k
 nnoremap <silent> <C-j> <C-d>j
 
+vnoremap <silent> <C-k> <C-u>k
+vnoremap <silent> <C-j> <C-d>j
+
 " Make gf (go to file) create the file, if not existent
 nnoremap gf :e<cfile><CR>
 nnoremap <C-w>f :sp +e<cfile><CR>

@@ -17,3 +17,5 @@ mpd/pid
 mpd/state
 mpd/log
 mpd/sticker.sql
+__init__.py
+__pycache__
