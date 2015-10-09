@@ -6,6 +6,7 @@ dots=$HOME/dots
 alias muttf="mutt -F ~/.mutt/mutt_f"
 alias p='pass'
 
+alias sudo="sudo "
 alias tt="task calendar"
 alias pki="packer-color -Si"
 alias pks="packer-color -Ss"

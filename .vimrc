@@ -16,6 +16,7 @@ set visualbell                  "No sounds
 set noerrorbells                " don't beep
 set autoread                    "Reload files changed outside vim
 set shortmess=filnxtToO
+set mouse=a
 
 let g:rainbow_active = 1
 let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']

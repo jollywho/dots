@@ -18,10 +18,13 @@ class Default(ColorScheme):
 				fg = black
 			if context.border:
 				attr = normal
-				fg = default
+				fg = 0
+			if context.document:
+				attr = normal
+				fg = 6
 			if context.media:
 				if context.image:
-					fg = red
+					fg = 30
 				else:
 					fg = yellow
 			if context.container:
@@ -78,9 +81,10 @@ class Default(ColorScheme):
 				fg = green
 
 		elif context.in_statusbar:
+			fg = 15
 			if context.permissions:
 				if context.good:
-					fg = white
+					fg = 15
 				elif context.bad:
 					fg = red
 			if context.marked:
