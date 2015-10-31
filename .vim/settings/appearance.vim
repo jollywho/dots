@@ -8,7 +8,7 @@ highlight Normal ctermbg=NONE
 highlight clear SignColumn
 
 highlight VertSplit ctermbg=NONE ctermfg=black
-set fillchars+=vert:\╠
+set fillchars+=vert:\╬
 
 if has("gui_running")
   "tell the term has 256 colors
