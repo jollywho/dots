@@ -121,6 +121,11 @@ autocmd FileType rspec map <buffer> <D-k> {
 autocmd FileType javascript map <buffer> <D-k> }
 autocmd FileType javascript map <buffer> <D-j> {
 
+function! TermOpen()
+  new<CR>
+  term
+endfunction
+command! Term call TermOpen()
 
 " Command-/ to toggle comments
 map <D-/> :TComment<CR>
