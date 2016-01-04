@@ -1,5 +1,6 @@
 # Write your default config options here!
 
+force-window=immediate
 # Subs
 ass-force-style=Kerning=yes
 demuxer-mkv-subtitle-preroll
@@ -26,9 +27,9 @@ osd-shadow-color='#303030'
 osd-shadow-offset=1.75
 osd-spacing=0
 
-vo=opengl-hq:dither-depth=no:pbo:source-shader=~/.config/mpv/deband.glsl:tscale=mitchell:interpolation:scaler-resizes-only
-#vo=opengl-hq:scale=ewa_lanczos:scale-antiring=0.8:cscale=ewa_lanczos:cscale-antiring=1.0:scale-down=mitchell:scaler-resizes-only:temporal-dither:icc-profile-auto:icc-cache=/home/nand/.cache/3dlut:3dlut-size=128x256x128:fbo-format=rgba16f
-hwdec=vda
+#vo=opengl-hq
+vo=opengl-hq:scaler-resizes-only:scale=spline36:cscale=oversample:interpolation:temporal-dither:gamma=0.9:blend-subtitles=yes:smoothmotion:smoothmotion-threshold=0.0
+#hwdec=vda
 osc=no
 audio-channels=2
 
@@ -40,3 +41,5 @@ alang=jp,jpn,Japanese,japanese,en,eng
 cache=204800
 lua-opts=osc-seekbarstyle=bar
 af=drc
+
+volume=70

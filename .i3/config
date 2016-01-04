@@ -1,5 +1,3 @@
-exec --no-startup-id exec compton --config /dev/null --backend glx
-
 #.......
 # font
 #.......
@@ -141,14 +139,15 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws0
 
-workspace $wsE output DVI-D-1
+workspace $wsE output HDMI-0
 workspace $ws2 output DVI-D-1
-workspace $ws1 output DVI-I-1
+workspace $ws1 output DP-0
 workspace $ws3 output DVI-I-1
-workspace $ws9 output HDMI-0
+workspace $ws0 output HDMI-0
 assign [class="^Firefox$"] $wsE
-assign [class="^mpv$"] $ws9
+assign [class="^mpv$"] $ws0
 assign [class="^Sxiv$"] $ws5
+assign [class="^MuPDF$"] $ws5
 
 # resize window (you can also use the mouse for that)
 bindsym $mod+Mod1+Shift+x mode "resize"
