@@ -1,3 +1,5 @@
+sippy() { curl -o- $(xclip -o) | sicp }
+
 manswitch () { man $1 | less -p "^ +$2"; }
 
 date2stamp () {
