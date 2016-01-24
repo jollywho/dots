@@ -25,6 +25,10 @@ endfunction
 nnoremap 0 ^
 nnoremap ^ 0
 
+nnoremap / /\v
+vnoremap / /\v
+nnoremap <tab> %
+vnoremap <tab> %
 " ========================================
 " RSI Prevention - keyboard remaps
 " ========================================
