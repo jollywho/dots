@@ -110,7 +110,8 @@
   default = tracking
 [core]
   autocrlf = false
-  editor = vim
+	editor = nvim
+	pager = less -+F
 [advice]
   statusHints = false
 [diff]
