@@ -1,0 +1,30 @@
+source ~/dots/.nav/keymap.nav
+source ~/dots/.nav/syntax.nav
+source ~/dots/.nav/colors.nav
+
+function! pic
+    #not yet supported!
+    #function! dir(name)
+    #  #new fm @pics
+    #  new
+    #  cd $name
+    #  bu term
+  new fm @pics
+  bu term
+end
+
+function! op_before_vid
+  echo before
+  "mpv --fs %:fullpath"
+end
+
+function! op_after_vid
+  echo after
+  "pkill compton"
+end
+
+#op Video op_before_vid op_after_vid
+op Video "mpv --fs %:fullpath" "echo nop"
+op Document "mupdf %:fullpath" "echo nop"
+
+new fm /home/chi/mushi

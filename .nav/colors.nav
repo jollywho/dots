@@ -1,0 +1,26 @@
+# ========================================
+# nav colors
+# ========================================
+hi BufText 8 -1
+hi BufSelActive 0 1
+hi BufSelInactive 1 233
+hi bu 3 3
+hi BufText 8 -1
+hi BufDir 15 -1
+hi BufSz 14 -1
+
+hi ComplText 7 -1
+hi OverlaySep 8 -1
+hi OverlayLine 7 0
+hi OverlayBufNo 52 217
+hi OverlayInactiveBufNo 232 8
+hi OverlayActive 16 4
+hi OverlayArgs 195 235
+hi OverlayInactive 247 235
+hi OverlayTextInactive 247 0
+
+hi Video 8 -1
+hi Image 23 -1
+hi Archive 2 -1
+hi Music 3 -1
+hi Document 139 -1
