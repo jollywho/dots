@@ -2,8 +2,8 @@
 # nav colors
 # ========================================
 hi BufText 8 -1
-hi BufSelActive 0 1
-hi BufSelInactive 1 233
+hi BufSelActive 178 1
+hi BufSelInactive 131 233
 hi bu 3 3
 hi BufText 8 -1
 hi BufDir 15 -1

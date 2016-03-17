@@ -1,30 +1,27 @@
-source ~/dots/.nav/keymap.nav
-source ~/dots/.nav/syntax.nav
-source ~/dots/.nav/colors.nav
+so ~/dots/.nav/keymap.nav
+so ~/dots/.nav/syntax.nav
+so ~/dots/.nav/colors.nav
 
-function! pic
-    #not yet supported!
-    #function! dir(name)
-    #  #new fm @pics
-    #  new
-    #  cd $name
-    #  bu term
-  new fm @pics
+fu! pic(name)
+  new
+  cd $name
   bu term
 end
 
-function! op_before_vid
-  echo before
-  "mpv --fs %:fullpath"
+fu! op_before_vid
+#if pid in group, dont start
+  !mpv_i
+  kill %:prev
+  return mpv --fs %:fullpath
 end
 
-function! op_after_vid
-  echo after
-  "pkill compton"
+fu! op_after_vid
+#if pid in group, dont kill
+  !pkill compton
 end
 
-#op Video op_before_vid op_after_vid
-op Video "mpv --fs %:fullpath" "echo nop"
+op Video "op_before_vid()" "op_after_vid()"
+op Music "op_before_vid()" "op_after_vid()"
 op Document "mupdf %:fullpath" "echo nop"
 
-new fm /home/chi/mushi
+new fm
