@@ -1,7 +1,7 @@
 # ========================================
 # nav syntax groups
 # ========================================
-syn Video      [mkv,avi,ogm,mp4,webm,div,flv]
+syn Video      [mkv,avi,ogm,mp4,webm,div,flv,wmv,part]
 syn Music      [flac,mp3,aac,m4a,ogg,wav,wma,m3u,opus]
 syn Image      [jpg,jpeg,png,gif,bmp,tif]
 syn Archive    [rar,zip,gz,7z,deb,dmg,xar,msi,pkg,bz,bz2,cab]
