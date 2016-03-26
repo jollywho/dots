@@ -3,6 +3,7 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_always_populate_location_list = 1
 if !exists('g:ycm_filetype_specific_completion_to_disable')
     let g:ycm_filetype_specific_completion_to_disable = {}
 endif
