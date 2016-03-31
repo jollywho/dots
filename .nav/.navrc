@@ -22,7 +22,7 @@ end
 
 op Video "op_before_vid()" "op_after_vid()"
 op Music "op_before_vid()" "op_after_vid()"
-op Picture "sxiv %:fullpath" "echo nop"
-op Document "mupdf %:fullpath" "echo nop"
+op Image "sxiv -m %:fullpath"
+op Document "mupdf %:fullpath"
 
 new fm
