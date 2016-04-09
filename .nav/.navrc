@@ -12,7 +12,7 @@ fu! op_before_vid
 #if pid in group, dont start
   !mpv_i
   kill %:prev
-  return mpv --fs %:fullpath
+  ret mpv --fs %:fullpath
 end
 
 fu! op_after_vid

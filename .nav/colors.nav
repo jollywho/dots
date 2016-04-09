@@ -13,8 +13,7 @@ hi ComplSelected 7 0
 hi ComplText 7 -1
 hi OverlaySep 8 -1
 hi OverlayLine 7 0
-hi OverlayBufNo 52 217
-hi OverlayInactiveBufNo 232 8
+hi OverlayBufNo 232 8
 hi OverlayActive 16 4
 hi OverlayArgs 195 235
 hi OverlayInactive 247 235
