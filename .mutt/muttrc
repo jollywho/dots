@@ -1,7 +1,4 @@
 source ~/.mutt/ac1
-source ~/.mutt/ac3
-source ~/.mutt/ac4
-source ~/.mutt/ac2
 
 set imap_check_subscribed
 set sort     = threads
@@ -13,6 +10,7 @@ set message_cachedir = ~/.mutt/cache/bodies
 set certificate_file = ~/.mutt/certificates
 set alias_file       = ~/.mutt/aliases
 set mailcap_path     = ~/.mutt/mailcap
+set record           = ""
 source ~/.mutt/col
 
 set sleep_time = 0
@@ -52,7 +50,7 @@ bind index _  collapse-all
 set sidebar_width=20
 set sidebar_visible=yes
 
-set editor = 'vim + -c "set textwidth=0"'
+set editor = 'nvim + -c "set textwidth=0"'
 
 bind index,pager \CP sidebar-prev
 bind index,pager \CN sidebar-next

@@ -55,3 +55,4 @@ nnoremap <silent> <D-M> :CtrlPBufTag<CR>
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 let g:ctrlp_max_files = 1
 let g:ctrlp_max_depth = 1
+let g:ctrlp_match_window = 'results:100'

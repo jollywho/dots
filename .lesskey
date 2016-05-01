@@ -2,3 +2,5 @@ h noaction 1\e(
 l noaction 1\e)
 ^h noaction 5\e(
 ^l noaction 5\e)
+u forw-scroll
+i back-scroll

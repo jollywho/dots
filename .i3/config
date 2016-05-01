@@ -140,9 +140,10 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws0
 
 workspace $wsE output HDMI-0
-workspace $ws2 output DVI-D-1
+workspace $ws2 output HDMI-0
 workspace $ws1 output DP-0
 workspace $ws3 output DVI-I-1
+workspace $ws5 output HMDI-0
 workspace $ws0 output HDMI-0
 assign [class="^Firefox$"] $wsE
 assign [class="^mpv$"] $ws0

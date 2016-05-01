@@ -27,8 +27,6 @@ nnoremap ^ 0
 
 nnoremap / /\v
 vnoremap / /\v
-nnoremap <tab> %
-vnoremap <tab> %
 " ========================================
 " RSI Prevention - keyboard remaps
 " ========================================
@@ -84,8 +82,8 @@ nnoremap Q @q
 vnoremap Q :norm @q<cr>
 
 " gary bernhardt's hashrocket
-imap <c-Y> <space>=><space>
-imap <c-L> <space>-><space>
+imap <c-Y> =>
+imap <c-L> ->
 
 " Change inside various enclosures with Cmd-" and Cmd-'
 " The f makes it find the enclosure so you don't have
@@ -262,6 +260,5 @@ map <D-%> :so %<CR>
 map <silent> ,hp :!open -a Safari %<CR><CR>
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_cmd = 'CtrlP'
-nnoremap <leader>p :Unite file buffer<cr>
 nnoremap gb :ls<CR>:b<Space>
 let g:clever_f_ignore_case = 1
