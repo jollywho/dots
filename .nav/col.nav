@@ -18,9 +18,13 @@ hi OverlayActive 16 4
 hi OverlayArgs 195 235
 hi OverlayInactive 247 235
 hi OverlayTextInactive 247 0
+hi OverlayProgress 235 5
+hi OverlayFilter 7 13
 
 hi Video 8 -1
 hi Image 23 -1
 hi Archive 2 -1
 hi Music 3 -1
 hi Document 139 -1
+
+set sepchar = ╬

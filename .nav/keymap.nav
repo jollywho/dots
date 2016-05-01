@@ -4,3 +4,4 @@
 map ; :
 map s :sort <C-g>
 map S :sort <C-g><C-l>
+map R :reload<CR>
