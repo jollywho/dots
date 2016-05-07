@@ -34,7 +34,7 @@ key_end = 360 'G'
 #
 #key_space = 32
 #
-#key_enter = 10
+key_enter = 'l'
 #
 #key_delete = 330 'd'
 #
@@ -68,7 +68,7 @@ key_search_engine = '3' 268
 #
 key_media_library = '4' 269
 #
-key_playlist_editor = '5' 270
+key_media_library = '5' 270
 #
 #key_tag_editor = '7' 271
 #
