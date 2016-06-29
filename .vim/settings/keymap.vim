@@ -6,7 +6,7 @@
 " alias yw to yank the entire word 'yank inner word'
 " even if the cursor is halfway inside the word
 " FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
-nnoremap ,yw yiww
+nnoremap yw yiw
 
 " ,ow = 'overwrite word', replace a word with what's in the yank buffer
 " FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
@@ -25,8 +25,6 @@ endfunction
 nnoremap 0 ^
 nnoremap ^ 0
 
-nnoremap / /\v
-vnoremap / /\v
 " ========================================
 " RSI Prevention - keyboard remaps
 " ========================================
@@ -38,10 +36,10 @@ vnoremap / /\v
 " Now using the middle finger of either hand you can type
 " underscores with apple-k or apple-d, and add Shift
 " to type dashes
-imap <silent> <D-k> _
-imap <silent> <D-d> _
-imap <silent> <D-K> -
-imap <silent> <D-D> -
+imap <silent> <A-k> _
+imap <silent> <A-d> _
+imap <silent> <A-K> -
+imap <silent> <A-D> -
 
 " ,# Surround a word with #{ruby interpolation}
 map ,# ysiw#
@@ -114,15 +112,10 @@ nmap <silent> ,qo :copen<CR>
 
 " move up/down quickly by using Cmd-j, Cmd-k
 " which will move us around by functions
-nnoremap <silent> <D-j> }
-nnoremap <silent> <D-k> {
-autocmd FileType ruby map <buffer> <D-j> ]m
-autocmd FileType ruby map <buffer> <D-k> [m
-autocmd FileType rspec map <buffer> <D-j> }
-autocmd FileType rspec map <buffer> <D-k> {
-autocmd FileType javascript map <buffer> <D-k> }
-autocmd FileType javascript map <buffer> <D-j> {
+nnoremap <silent> <A-j> }
+nnoremap <silent> <A-k> {
 
+" move terminal buffer
 tnoremap <A-h> <C-\><C-n><C-w>h
 tnoremap <A-j> <C-\><C-n><C-w>j
 tnoremap <A-k> <C-\><C-n><C-w>k
@@ -187,10 +180,10 @@ vmap J <NOP>
 vmap K <NOP>
 
 " Resize windows with arrow keys
-nnoremap <D-Up> <C-w>+
-nnoremap <D-Down> <C-w>-
-nnoremap <D-Left> <C-w><
-nnoremap <D-Right>  <C-w>>
+nnoremap <A-Up> <C-w>+
+nnoremap <A-Down> <C-w>-
+nnoremap <A-Left> <C-w><
+nnoremap <A-Right>  <C-w>>
 
 " create <%= foo %> erb tags using Ctrl-k in edit mode
 imap <silent> <C-K> <%=   %><Esc>3hi
@@ -211,10 +204,7 @@ nnoremap <silent> ,cn :let @* = expand("%:t")<CR>
 nnoremap <SPACE><SPACE> :noh<CR>
 
 "(v)im (c)ommand - execute current line as a vim command
-nmap <silent> ,vc yy:<C-f>p<C-c><CR>
-
-"(v)im (r)eload
-nmap <silent> ,vr :so %<CR>
+noremap <silent> ,vc yy:<C-f>p<C-c><CR>
 
 " Type ,hl to toggle highlighting on/off, and show current value.
 noremap ,hl :set hlsearch! hlsearch?<CR>
@@ -241,24 +231,34 @@ nnoremap <C-l> gt
 " Tabularize - alignment
 " ============================
 " Hit Cmd-Shift-A then type a character you want to align by
-nmap <D-A> :Tabularize /
-vmap <D-A> :Tabularize /
+nnoremap <A-A> :Tabularize /
+vnoremap <A-A> :Tabularize /
 
 " ============================
 " SplitJoin plugin
 " ============================
-nmap sj :SplitjoinSplit<cr>
-nmap sk :SplitjoinJoin<cr>
+noremap sj :SplitjoinSplit<cr>
+noremap sk :SplitjoinJoin<cr>
 
 " Get the current highlight group. Useful for then remapping the color
-map ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
+noremap ,hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>
 
-" Source current file Cmd-% (good for vim development)
-map <D-%> :so %<CR>
+"(v)im (r)eload
+noremap <silent> ,vr :so %<CR>
 
 " ,hp = html preview
-map <silent> ,hp :!open -a Safari %<CR><CR>
+noremap <silent> ,hp :!open -a Firefox %<CR><CR>
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_cmd = 'CtrlP'
 nnoremap gb :ls<CR>:b<Space>
-let g:clever_f_ignore_case = 1
+
+" ============================
+" EasyMotion
+" ============================
+nmap f <Plug>(easymotion-overwin-f)
+omap f <Plug>(easymotion-bd-fl)
+xmap f <Plug>(easymotion-bd-fl)
+omap F <Plug>(easymotion-Fl)
+xmap F <Plug>(easymotion-Fl)
+
+nmap <leader>l <Plug>(easymotion-overwin-line)

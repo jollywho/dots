@@ -1,6 +1,5 @@
 Bundle "jistr/vim-nerdtree-tabs.git"
 Bundle "scrooloose/nerdtree.git"
-Bundle "rhysd/clever-f.vim"
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'fidian/hexmode'
 Bundle 'FelikZ/ctrlp-py-matcher'

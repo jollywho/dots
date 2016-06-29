@@ -16,4 +16,6 @@ highlight YcmErrorSign ctermbg=NONE ctermfg=177 cterm=underline
 highlight YcmWarningSign ctermbg=NONE ctermfg=177
 let g:ycm_warning_symbol = '**'
 let g:ycm_error_symbol = '**'
+let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
+let g:ycm_extra_conf_vim_data   = [ '&filetype' ]
 " TODO: obj.what.<tab> re-open comp if closed
