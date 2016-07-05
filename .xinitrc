@@ -13,20 +13,6 @@ unclutter -idle 1 &
 xset s off
 xset -dpms
 
-if [ `hostname` == "letopanyu" ]; then
-  pulseaudio --start
-else
-  systemctl start smbd
-  xsetroot -solid "#000000"
-  feh --bg-scale ~/.config/bgg.png
-fi
-
-
-#uim
-#export GTK_IM_MODULE='uim'
-#export QT_IM_MODULE='uim'
-#uim-xim &
-#export XMODIFIERS='@im=uim'
 
 exec i3
 
