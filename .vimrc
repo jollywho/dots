@@ -17,10 +17,13 @@ set noerrorbells                " don't beep
 set autoread                    "Reload files changed outside vim
 set shortmess=filnxtToO
 set mouse=a
+set shell=sh
 
 let g:rainbow_active = 1
 let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
 let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+let g:session_autosave = 'no'
+let g:session_autoload = 'no'
 
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"

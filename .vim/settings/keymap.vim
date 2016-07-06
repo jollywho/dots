@@ -248,8 +248,6 @@ noremap <silent> ,vr :so %<CR>
 
 " ,hp = html preview
 noremap <silent> ,hp :!open -a Firefox %<CR><CR>
-let g:ctrlp_map = '<leader>p'
-let g:ctrlp_cmd = 'CtrlP'
 nnoremap gb :ls<CR>:b<Space>
 
 " ============================
