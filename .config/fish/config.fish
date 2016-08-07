@@ -1,14 +1,16 @@
 set fish_greeting
 set PATH /usr/local/bin $PATH
-set EDITOR /bin/nvim
+export EDITOR=/bin/nvim
 
-set -x LESS_TERMCAP_mb (printf "\033[01;31m")  
-set -x LESS_TERMCAP_md (printf "\033[01;31m")  
+set -x LESS_TERMCAP_mb (printf "\033[01;34m")  
+set -x LESS_TERMCAP_md (printf "\033[35m")  
 set -x LESS_TERMCAP_me (printf "\033[0m")  
 set -x LESS_TERMCAP_se (printf "\033[0m")  
-set -x LESS_TERMCAP_so (printf "\033[01;44;33m")  
+set -x LESS_TERMCAP_so (printf "\033[03;31;33m")  
 set -x LESS_TERMCAP_ue (printf "\033[0m")  
-set -x LESS_TERMCAP_us (printf "\033[01;32m")
+set -x LESS_TERMCAP_us (printf "\033[34m")
+
+set fish_color_command red
 
 function fish_prompt
   printf '%s' (set_color blue) (whoami) (set_color normal)
@@ -52,6 +54,7 @@ alias psg="ps aux | grep "
 # Show human friendly numbers and colors
 alias df='df -h'
 alias ll='ls -alGh'
+alias la='ls -a'
 alias du='du -h -d 2'
 
 # show me files matching "ls grep"
@@ -64,6 +67,8 @@ alias ve='eval $EDITOR ~/.vimrc'
 alias fi='eval $EDITOR ~/.config/fish/config.fish'
 
 alias gi='eval $EDITOR .gitignore'
+
+alias mi='eval $EDITOR ~/.mpv/config'
 
 # Git Aliases
 alias g='git'
@@ -96,6 +101,7 @@ alias gcs='git show'
 alias gcl='git-commit-lost'
 #
 # Index (i)
+alias ga='git add .'
 alias gia='git add $argv'
 alias giA='git add --patch'
 alias giu='git add --update'
@@ -180,7 +186,7 @@ function o
 end
 
 function v
-  make; valgrind --leak-check=full --log-file=build/a ./build/nav -d $vargs
+  make; valgrind --leak-check=full --log-file=build/a ./build/nav -d $argv
 end
 
 function sippy
@@ -192,24 +198,24 @@ function manswitch
 end
 
 function date2stamp
-  date --utc --date "$1" +%s
+  date --utc --date $varg +%s
 end
 
 function stamp2date
-  date --utc --date "1970-01-01 $1 sec" "+%Y-%m-%d %T"
+  date --utc --date "1970-01-01 $varg sec" "+%Y-%m-%d %T"
 end
 
 function dateDiff
-  switch $1
-    case -s   sec=1;      shift;;
-    case -m   sec=60;     shift;;
-    case -h   sec=3600;   shift;;
-    case -d   sec=86400;  shift;;
+  switch $argv[1]
+    case -s   sec=1;
+    case -m   sec=60;
+    case -h   sec=3600;
+    case -d   sec=86400;
     case *    sec=86400;;
   end
 
-  let dte1=(date2stamp $1)
-  let dte2=(date2stamp $2)
+  let dte1=(date2stamp $argv[1])
+  let dte2=(date2stamp $argv[2])
   let diffSec=(dte2-dte1)
 
   if math diffSec < 0
@@ -222,17 +228,17 @@ function dateDiff
 end
 
 function webmc
-  let tdiff=(dateDiff -s $2 $3)
-  let has_subs=(ffprobe $1 2>&1 | grep "Stream.*: Sub")
+  let tdiff=(dateDiff -s $argv[2] $argv[3])
+  let has_subs=(ffprobe $argv[1] 2>&1 | grep "Stream.*: Sub")
   if test -n $has_subs
-    ffmpeg -i "$1" out.ssa
-    ffmpeg -i "$1" -vf subtitles=out.ssa -t $tdiff -ss $2 -cpu-used 0 -threads 4 -codec:v libx264 -crf 23 -preset medium -strict -2 "$1".avi
+    ffmpeg -i "$argv[1]" out.ssa
+    ffmpeg -i "$argv[1]" -vf subtitles=out.ssa -t $tdiff -ss $argv[2] -cpu-used 0 -threads 4 -codec:v libx264 -crf 23 -preset medium -strict -2 "$argv[1]".avi
   else
-    ffmpeg -i "$1" -t $tdiff -ss $2 -cpu-used 0 -threads 4 -codec:v libx264 -crf 23 -preset medium -strict -2 "$1".avi
+    ffmpeg -i "$argv[1]" -t $tdiff -ss $argv[2] -cpu-used 0 -threads 4 -codec:v libx264 -crf 23 -preset medium -strict -2 "$argv[1]".avi
   end
-  ffmpeg -i "$1".avi -cpu-used 0 -threads 4 -c:v libvpx -b:v 3M -c:a libvorbis "$1".webm
+  ffmpeg -i "$argv[1]".avi -cpu-used 0 -threads 4 -c:v libvpx -b:v 3M -c:a libvorbis $argv[1].webm
   rm out.ssa
-  rm "$1".avi
+  rm "$argv[1]".avi
 end
 
 #sdcv_lookup()
