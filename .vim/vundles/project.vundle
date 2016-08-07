@@ -1,5 +1,0 @@
-Bundle "jistr/vim-nerdtree-tabs.git"
-Bundle "scrooloose/nerdtree.git"
-Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'fidian/hexmode'
-Bundle 'FelikZ/ctrlp-py-matcher'

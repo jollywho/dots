@@ -1,7 +1,0 @@
-Bundle "chrisbra/color_highlight.git"
-Bundle "itchyny/lightline.vim"
-Bundle "jby/tmux.vim.git"
-Bundle "morhetz/gruvbox"
-Bundle "Yggdroot/indentLine"
-"Bundle "oblitum/rainbow"
-Bundle "jollywho/nav.vim"

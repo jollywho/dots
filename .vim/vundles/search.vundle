@@ -1,7 +1,0 @@
-Bundle "rking/ag.vim"
-Bundle "vim-scripts/IndexedSearch"
-Bundle "nelstrom/vim-visual-star-search"
-Bundle "skwp/greplace.vim"
-Bundle "easymotion/vim-easymotion"
-Bundle "haya14busa/incsearch.vim"
-Bundle "Valloric/YouCompleteMe"
