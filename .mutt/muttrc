@@ -47,14 +47,7 @@ bind index ^R  read-subthread
 bind index -  collapse-thread
 bind index _  collapse-all
 
-set sidebar_width=20
-set sidebar_visible=yes
-
 set editor = 'nvim + -c "set textwidth=0"'
-
-bind index,pager \CP sidebar-prev
-bind index,pager \CN sidebar-next
-bind index,pager \CO sidebar-open
 
 bind editor <space> noop
 macro index M "T~N<enter>;WNT~O<enter>;WO\CT~A<enter>" "Mark all messages read"
