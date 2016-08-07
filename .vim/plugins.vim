@@ -63,7 +63,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'morhetz/gruvbox'
 Plug 'mattn/gist-vim'
 Plug 'tpope/vim-fugitive'
-
+Plug 'scrooloose/nerdtree'
 
 " Add plugins to &runtimepath
 call plug#end()

@@ -1,0 +1,13 @@
+
+fu! test(a)
+  let bb = ha
+  echo $bb
+  return a
+end
+
+let a = [1,2,     \
+         3,4]
+
+aug hello
+
+plug 'preview.nav' pvw

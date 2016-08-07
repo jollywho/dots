@@ -1,36 +1,31 @@
-so ~/dots/.nav/keymap.nav
-so ~/dots/.nav/syntax.nav
-so ~/dots/.nav/col.nav
+so '~/dots/.nav/keymap.nav'
+so '~/dots/.nav/syntax.nav'
+so '~/dots/.nav/colors.nav'
 
 fu! pic(name)
-  new
-  cd $name
-  bu term
-end
+  new | cd $name | bu term
+en
 
 let mpv_arg = --fs --input-unix-socket=$HOME/.mpv/socket
 
-fu! op_before_vid
-  if %prev
-    !mpvctl stop
-  end
-  ret mpv $mpv_arg %fullpath
-end
+fu! op_before_vid()
+  if %o:prev | !mpvctl stop | en
+  ret mpv $mpv_arg %f
+en
 
-fu! op_before_mu
-  if %prev
-    !mpvctl stop
-  end
-  ret mpv $mpv_arg %fullpath
-end
-
-fu! test(a)
-  return test
-end
+fu! op_before_mu()
+  if %o:prev | !mpvctl stop | en
+  ret mpv $mpv_arg --speed 1 %f
+en
 
 op Video    "op_before_vid()"
 op Music    "op_before_mu()"
-op Image    "sxiv -m %fullpath"
-op Document "mupdf %fullpath"
+op Image    "sxiv -m %f"
+op Document "mupdf %f"
 
+map E :(!eiyfs %f)<CR>R
+
+so '~/dots/.nav/test.nav'
+
+set sort=ctime
 new fm

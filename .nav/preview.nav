@@ -1,0 +1,39 @@
+#preview.nav
+#all-in-one buffer preview example
+
+#fu! preview_ch()
+#  if %t == 'Image'
+#    let bno = (vnew image $bno)
+#  elif %t == 'Document'
+#    let bno = (vnew dt %f)
+#  en
+#en
+#
+#let preview = 0
+#let bno = 0
+#
+#fu! preview_open()
+#  if $bno
+#    au! preview
+#    q $bno
+#    let bno = 0
+#    ret
+#  en
+#
+#  aug preview
+#  if %t == 'Image'
+#    let bno = (vnew img %b)
+#  elseif %t == 'Document'
+#    let bno = (vnew dt %f)
+#  en
+#  #au %b preview cursor_change * "preview_ch()"
+#en
+
+let moo = MOO
+
+fu! tt()
+  let a = yes
+  ret pvw::$moo
+en
+
+map O :tt()<CR>

@@ -52,7 +52,7 @@ bindsym $mod+Shift+Mod1+r restart
 # Shutdown / Reboot / Screenlock
 #bindsym $mod+Shift+s exec sudo shutdown -h now
 #bindsym $mod+Shift+q exec sudo shutdown -r now
-bindsym $mod+Shift+Escape exec i3lock -t -i ~/.config/lock.png
+bindsym $mod+Shift+Escape exec i3lock -i ~/.config/lock.png
 bindsym $mod+Shift+Mod1+m exec mpc current -f "%title%" >> ~/muu
 
 # change focus
